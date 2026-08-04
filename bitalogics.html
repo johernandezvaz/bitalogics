@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bitalogics — Desarrollo de software con lógica humana</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16283F;
+    --deep:#0E1B2E;
+    --blue:#2E86C1;
+    --blue-dark:#1B5A85;
+    --gold:#C98A3E;
+    --paper:#F4F6F9;
+    --paper-warm:#EFF2F6;
+    --line:rgba(22,40,63,0.12);
+    --text-soft:rgba(22,40,63,0.62);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.6;}
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:500;margin:0;color:var(--ink);}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:0.06em;color:var(--blue-dark);text-transform:uppercase;}
+  a{color:inherit;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 32px;}
+
+  /* NAV */
+  nav{position:sticky;top:0;background:rgba(244,246,249,0.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);z-index:10;}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;max-width:1080px;margin:0 auto;}
+  .brand{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-size:19px;font-weight:600;}
+  .brand-mark{width:28px;height:28px;border-radius:50%;background:linear-gradient(90deg,var(--paper) 50%,var(--blue) 50%);border:1.6px solid var(--ink);}
+  .nav-links{display:flex;gap:36px;font-size:14px;font-weight:500;}
+  .nav-links a{text-decoration:none;opacity:0.8;}
+  .nav-links a:hover{opacity:1;color:var(--blue-dark);}
+  .nav-cta{font-family:'JetBrains Mono',monospace;font-size:13px;border:1px solid var(--ink);padding:8px 16px;border-radius:2px;text-decoration:none;}
+
+  /* HERO */
+  .hero{position:relative;padding:110px 32px 90px;overflow:hidden;}
+  .hero-seam{position:absolute;top:0;bottom:0;left:56%;width:6px;background:var(--ink);
+    clip-path:polygon(0% 0%,100% 3%,60% 9%,100% 15%,40% 22%,100% 30%,70% 38%,100% 46%,50% 55%,100% 63%,60% 71%,100% 80%,45% 88%,100% 94%,100% 100%,0 100%);
+    opacity:0.9;}
+  .hero-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;max-width:1080px;margin:0 auto;position:relative;}
+  .hero h1{font-size:44px;line-height:1.15;margin:18px 0 22px;}
+  .hero h1 .mono-part{font-family:'JetBrains Mono',monospace;color:var(--blue-dark);font-size:0.62em;display:block;letter-spacing:0.01em;margin-top:6px;}
+  .hero p.lead{font-size:16.5px;color:var(--text-soft);max-width:440px;margin-bottom:32px;}
+  .hero-ctas{display:flex;gap:14px;}
+  .btn-primary{background:var(--ink);color:var(--paper);padding:13px 24px;text-decoration:none;font-size:14px;font-weight:500;border-radius:2px;}
+  .btn-ghost{border:1px solid var(--line);color:var(--ink);padding:13px 24px;text-decoration:none;font-size:14px;font-weight:500;border-radius:2px;}
+  .hero-side{display:flex;flex-direction:column;justify-content:center;gap:16px;padding-left:24px;}
+  .stat{border-left:2px solid var(--blue);padding-left:16px;}
+  .stat b{font-family:'Fraunces',serif;font-size:26px;display:block;}
+  .stat span{font-size:13px;color:var(--text-soft);}
+
+  /* SECTION SHELL */
+  section{padding:80px 32px;}
+  .section-head{margin-bottom:44px;max-width:560px;}
+  .section-head h2{font-size:30px;margin-top:10px;}
+
+  /* SERVICES */
+  .services{background:var(--paper-warm);}
+  .service-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .service-card{background:var(--paper-warm);padding:32px;}
+  .service-card .num{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--gold);}
+  .service-card h3{font-size:19px;margin:12px 0 10px;}
+  .service-card p{font-size:14.5px;color:var(--text-soft);margin:0;}
+
+  /* PORTFOLIO */
+  .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .proj-card{border:1px solid var(--line);border-radius:2px;overflow:hidden;background:#fff;}
+  .proj-thumb{height:120px;background:var(--ink);position:relative;}
+  .proj-thumb.split::after{content:"";position:absolute;inset:0;left:55%;background:var(--blue);}
+  .proj-body{padding:20px;}
+  .tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:11px;padding:3px 8px;border-radius:2px;margin-bottom:10px;}
+  .tag.real{background:rgba(46,134,193,0.12);color:var(--blue-dark);}
+  .tag.concept{background:rgba(201,138,62,0.15);color:#8a5a20;}
+  .proj-body h3{font-size:16.5px;margin-bottom:6px;}
+  .proj-body p{font-size:13.5px;color:var(--text-soft);margin:0;}
+
+  /* ABOUT */
+  .about{background:var(--deep);color:var(--paper);}
+  .about .eyebrow{color:var(--blue);}
+  .about h2{color:var(--paper);font-size:30px;margin:10px 0 20px;}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+  .about p{color:rgba(244,246,249,0.72);font-size:15px;max-width:460px;}
+  .founder{display:flex;gap:16px;align-items:center;margin-top:28px;}
+  .founder-mark{width:46px;height:46px;border-radius:50%;background:linear-gradient(90deg,#fff 50%,var(--blue) 50%);flex-shrink:0;}
+  .founder b{display:block;font-family:'Fraunces',serif;font-size:15.5px;color:var(--paper);}
+  .founder span{font-size:13px;color:rgba(244,246,249,0.6);}
+
+  /* CONTACT / FOOTER */
+  .contact{text-align:center;}
+  .contact h2{font-size:34px;max-width:600px;margin:14px auto 28px;}
+  footer{border-top:1px solid var(--line);padding:32px;font-size:13px;color:var(--text-soft);}
+  .footer-inner{max-width:1080px;margin:0 auto;display:flex;justify-content:space-between;}
+
+  @media(max-width:720px){
+    .hero-grid,.about-grid{grid-template-columns:1fr;}
+    .service-grid,.portfolio-grid{grid-template-columns:1fr;}
+    .hero h1{font-size:32px;}
+    .hero-seam{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="brand"><span class="brand-mark"></span>Bitalogics</div>
+    <div class="nav-links">
+      <a href="#servicios">Servicios</a>
+      <a href="#portafolio">Portafolio</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <a class="nav-cta" href="#contacto">Iniciar proyecto</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-seam"></div>
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow">Desarrollo de software · Chihuahua, México</span>
+      <h1>Donde la intuición humana<span class="mono-part">se encuentra con la lógica del código.</span></h1>
+      <p class="lead">Creamos las herramientas digitales que tu negocio necesita —sitios web, sistemas internos y soluciones a la medida— explicado en términos simples, sin tecnicismos.</p>
+      <div class="hero-ctas">
+        <a class="btn-primary" href="#contacto">Hablemos de tu proyecto</a>
+        <a class="btn-ghost" href="#portafolio">Ver portafolio</a>
+      </div>
+    </div>
+    <div class="hero-side">
+      <div class="stat"><b>Todo en uno</b><span>Desde la idea hasta un sistema funcionando, de principio a fin</span></div>
+      <div class="stat"><b>Software industrial</b><span>Programas hechos para el trabajo diario en fábrica</span></div>
+      <div class="stat"><b>Resultados reales</b><span>En uso todos los días en líneas de producción</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="services" id="servicios">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Servicios</span>
+      <h2>Cuatro formas de trabajar contigo</h2>
+    </div>
+    <div class="service-grid">
+      <div class="service-card">
+        <span class="num">01</span>
+        <h3>Sitios y sistemas web</h3>
+        <p>Tu página, tienda o sistema en línea, hecho a la medida de cómo trabaja realmente tu negocio — no una plantilla genérica.</p>
+      </div>
+      <div class="service-card">
+        <span class="num">02</span>
+        <h3>Programas para tu negocio</h3>
+        <p>Herramientas hechas específicamente para tu operación: control de calidad, impresión de etiquetas, seguimiento de producción, y más.</p>
+      </div>
+      <div class="service-card">
+        <span class="num">03</span>
+        <h3>Automatización de procesos</h3>
+        <p>Conectamos tus herramientas de trabajo para que la información fluya sola — sin captura manual ni tareas repetidas.</p>
+      </div>
+      <div class="service-card">
+        <span class="num">04</span>
+        <h3>Asesoría técnica</h3>
+        <p>Te ayudamos a decidir qué necesitas de verdad, explicado en términos simples, antes de invertir en desarrollo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="portafolio">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Portafolio</span>
+      <h2>Trabajo real y propuestas conceptuales</h2>
+    </div>
+    <div class="portfolio-grid">
+      <div class="proj-card">
+        <div class="proj-thumb split"></div>
+        <div class="proj-body">
+          <span class="tag real">Proyecto real</span>
+          <h3>Sapphirus — Tienda de Ropa Americana</h3>
+          <p>Tienda en línea de ropa americana importada, pensada para comprar fácil desde el celular y pagar con toda confianza.</p>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-thumb split"></div>
+        <div class="proj-body">
+          <span class="tag real">Proyecto real</span>
+          <h3>Fajas Colombianas Maydel</h3>
+          <p>Tienda en línea de fajas colombianas, diseñada para que los clientes encuentren lo que buscan y compren sin fricciones desde el celular.</p>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-thumb split"></div>
+        <div class="proj-body">
+          <span class="tag real">Proyecto real</span>
+          <h3>Plataforma para Despacho Contable</h3>
+          <p>Sitio web para un despacho contable, para que sus clientes encuentren su información y se comuniquen con la empresa sin complicaciones.</p>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-thumb split"></div>
+        <div class="proj-body">
+          <span class="tag real">Proyecto real</span>
+          <h3>Laboratorio de Ensayos Mecánicos</h3>
+          <p>Sitio web para un laboratorio de ensayos, con un sistema para que los clientes soliciten información sin tener que llamar o escribir directamente.</p>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-thumb split"></div>
+        <div class="proj-body">
+          <span class="tag real">Proyecto real</span>
+          <h3>Sitio para Agencia de Marketing Digital</h3>
+          <p>Sitio propio de una agencia de desarrollo y marketing digital, enfocado en atraer nuevos clientes a través de buscadores. La base de lo que hoy es Bitalogics.</p>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-thumb"></div>
+        <div class="proj-body">
+          <span class="tag concept">Propuesta conceptual</span>
+          <h3>Landing Page para Spa de Belleza</h3>
+          <p>Propuesta de sitio web para un spa, con espacio para reservar citas en línea y un diseño pensado para transmitir confianza.</p>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-thumb"></div>
+        <div class="proj-body">
+          <span class="tag concept">Propuesta conceptual</span>
+          <h3>Landing Page para Clínica Dental</h3>
+          <p>Propuesta de sitio web para una clínica dental, con catálogo de servicios y formulario de contacto directo.</p>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-thumb"></div>
+        <div class="proj-body">
+          <span class="tag concept">Propuesta conceptual</span>
+          <h3>Landing Page para Consultorio Dental Infantil</h3>
+          <p>Propuesta de sitio para un consultorio dental pediátrico, con diseño pensado para niños y padres, y contacto directo por WhatsApp.</p>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-thumb"></div>
+        <div class="proj-body">
+          <span class="tag concept">Propuesta conceptual</span>
+          <h3>Sitio Portafolio para Psicóloga</h3>
+          <p>Propuesta de sitio para una psicóloga, con blog de artículos y sistema de reserva de citas en línea.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="nosotros">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <span class="eyebrow">Nosotros</span>
+        <h2>Un estudio, dos maneras de pensar</h2>
+        <p>Bitalogics nace de una idea simple: el mejor software no elige entre intuición humana y precisión de máquina — usa ambas. Combinamos experiencia real en manufactura industrial con ingeniería de software moderna.</p>
+        <div class="founder">
+          <div class="founder-mark"></div>
+          <div>
+            <b>[Tu nombre]</b>
+            <span>Fundador — Ingeniería de Sistemas Computacionales</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p>Con experiencia previa en desarrollo de sistemas industriales para proveedores automotrices internacionales, construimos con el mismo estándar que exige una línea de producción: que funcione, sin excusas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="wrap">
+    <span class="eyebrow">Contacto</span>
+    <h2>¿Tienes un proyecto en mente? Hablemos.</h2>
+    <a class="btn-primary" href="mailto:hola@bitalogics.com">Escríbenos</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <span>© 2026 Bitalogics</span>
+    <span>Chihuahua, México</span>
+  </div>
+</footer>
+
+</body>
+</html>
