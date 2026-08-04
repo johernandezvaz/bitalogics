@@ -78,13 +78,13 @@ export const siteContent = {
   },
   about: {
     eyebrow: "Nosotros",
-    title: "Un estudio, dos maneras de pensar",
+    title: "Tecnología con un enfoque humano",
     paragraph1:
-      "Bitalogics nace de una idea simple: el mejor software no elige entre intuición humana y precisión de máquina — usa ambas. Trabajamos con negocios de cualquier tamaño y giro que necesiten una solución hecha a su medida, no una plantilla.",
+      "En Bitalogics creemos que cada negocio trabaja de forma diferente, por eso no hacemos soluciones genéricas. Nos tomamos el tiempo de entender cómo funciona cada proyecto para desarrollar software que realmente resuelva problemas y facilite el trabajo del día a día.",
     paragraph2:
-      "Nuestra experiencia abarca desde tiendas en línea y sitios de servicios profesionales hasta sistemas para operaciones industriales complejas — construimos con el mismo estándar sin importar el tamaño del proyecto: que funcione, sin excusas.",
+      "Hemos trabajado en proyectos de distintos tamaños, desde páginas web y tiendas en línea hasta sistemas internos para empresas con procesos más complejos. Sin importar el alcance, nuestro objetivo siempre es el mismo: crear herramientas confiables, fáciles de usar y que aporten valor desde el primer día.",
     founderName: "José Hernández",
-    founderTitle: "Fundador — Ingeniería de Sistemas Computacionales",
+    founderTitle: "Fundador · Ingeniero en Sistemas Computacionales",
   },
   contact: {
     eyebrow: "Contacto",
