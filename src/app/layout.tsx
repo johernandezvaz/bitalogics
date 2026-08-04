@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Fraunces, JetBrains_Mono, Inter } from "next/font/google";
 import "./globals.css";
+import CookieBanner from "@/components/CookieBanner";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -52,7 +53,9 @@ export default function RootLayout({
     >
       <body className="bg-paper text-ink font-sans antialiased selection:bg-blue selection:text-white">
         {children}
+        <CookieBanner />
       </body>
     </html>
   );
 }
+
