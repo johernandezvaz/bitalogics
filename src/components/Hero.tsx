@@ -26,6 +26,15 @@ export default function Hero() {
         aria-hidden="true"
       />
 
+      <div
+        className="absolute inset-x-0 top-0 h-28"
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(14,27,46,0.72) 0%, transparent 100%)",
+        }}
+        aria-hidden="true"
+      />
+
       <div className="relative z-10 flex-1 flex items-center justify-center px-6 md:px-12 lg:px-16 py-12 md:py-16">
         <div className="text-center max-w-[720px] mx-auto">
           <h1 className="text-[32px] md:text-[40px] leading-[1.2] font-medium text-paper text-balance">
