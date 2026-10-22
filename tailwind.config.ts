@@ -25,7 +25,10 @@ const config: Config = {
           DEFAULT: "#2E86C1",
           dark: "#1B5A85",
         },
-        gold: "#C98A3E",
+        gold: {
+          DEFAULT: "#C98A3E",
+          dark: "#B87A30",
+        },
         line: "rgba(22,40,63,0.12)",
         "input-border": "#8A94A3",
       },

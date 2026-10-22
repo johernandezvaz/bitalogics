@@ -12,27 +12,18 @@ export const siteContent = {
     menuOpenLabel: "Abrir menú",
     menuCloseLabel: "Cerrar menú",
   },
+  whatsapp: {
+    number: "[NÚMERO WHATSAPP]",
+    message: "Hola, quiero cotizar un proyecto con Bitalogics.",
+  },
   hero: {
-    eyebrow: "Desarrollo de software · Chihuahua, México",
-    titleMain: "Páginas web en Chihuahua y software a la medida",
-    titleMono: "Tu negocio en línea en 7 días, desde $2,500 MXN.",
-    lead: "Creamos páginas web, tiendas en línea, sistemas a la medida y soluciones de sistemas embebidos e IoT para pymes y emprendedores de Chihuahua y el norte de México, explicado en términos simples.",
-    primaryCta: "Hablemos de tu proyecto",
-    secondaryCta: "Ver portafolio",
-    stats: [
-      {
-        title: "Todo en uno",
-        subtitle: "Desde la idea hasta un sistema funcionando, de principio a fin",
-      },
-      {
-        title: "A la medida",
-        subtitle: "Herramientas hechas para cómo trabaja tu negocio, no al revés",
-      },
-      {
-        title: "Resultados reales",
-        subtitle: "Sistemas ya en uso, resolviendo problemas reales todos los días",
-      },
-    ],
+    title: "Tu negocio en línea en 7 días",
+    valueLine:
+      "Páginas web en Chihuahua con Google Maps y WhatsApp, listas para recibir clientes.",
+    specs: "7 días · desde $2,500 MXN · botón de WhatsApp",
+    primaryCta: "Cotizar por WhatsApp",
+    secondaryCta: "Ver ejemplos",
+    projectId: "[IMAGEN]",
   },
   services: {
     eyebrow: "Servicios",

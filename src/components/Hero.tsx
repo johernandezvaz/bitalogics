@@ -1,53 +1,61 @@
+import Image from "next/image";
+import Button from "@/components/Button";
 import { siteContent } from "@/lib/content";
+import { projects } from "@/lib/projects";
+import { whatsappHref } from "@/lib/whatsapp";
+
 
 export default function Hero() {
   const { hero } = siteContent;
+  const project = projects.find((p) => p.id === hero.projectId);
+  const image = project?.image;
 
   return (
-    <header className="relative pt-[110px] pb-[90px] px-8 overflow-hidden">
-      {/* Irregular seam element matching original design */}
-      <div className="hero-seam hidden md:block" />
-
-      <div className="relative max-w-[1080px] mx-auto grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] gap-12">
-        <div>
-          <span className="eyebrow block">{hero.eyebrow}</span>
-          <h1 className="font-serif text-[32px] md:text-[44px] leading-[1.15] font-medium my-[18px] md:mb-[22px] text-ink">
-            {hero.titleMain}
-            <span className="font-mono text-blue-dark text-[0.62em] block tracking-[0.01em] mt-[6px]">
-              {hero.titleMono}
-            </span>
+    <header className="min-h-[calc(100svh-72px)] flex items-center bg-white px-6 md:px-12 lg:px-16 py-12 md:py-16">
+      <div
+        className={`w-full max-w-[1200px] mx-auto grid grid-cols-1 items-center text-center ${
+          image ? "lg:grid-cols-12 lg:gap-12 lg:text-left" : ""
+        }`}
+      >
+        <div className={image ? "lg:col-span-5" : "max-w-[720px] mx-auto"}>
+          <h1 className="text-[32px] md:text-[40px] leading-[1.2] font-medium text-ink text-balance">
+            {hero.title}
           </h1>
-          <p className="text-[16.5px] text-soft max-w-[440px] mb-8 leading-relaxed">
-            {hero.lead}
+          <p className="mt-4 text-[18px] md:text-[20px] leading-[1.4] font-normal text-body">
+            {hero.valueLine}
           </p>
-          <div className="flex flex-wrap gap-[14px]">
-            <a
-              href="#contacto"
-              className="bg-ink text-paper px-[24px] py-[13px] text-sm font-medium rounded-[2px] no-underline hover:bg-deep active:translate-y-[1px] transition-all duration-200"
-            >
-              {hero.primaryCta}
-            </a>
-            <a
-              href="#portafolio"
-              className="border border-line text-ink px-[24px] py-[13px] text-sm font-medium rounded-[2px] no-underline hover:border-ink active:translate-y-[1px] transition-all duration-200"
-            >
+          <p className="mt-4 text-[16px] leading-[1.4] font-medium text-ink">
+            {hero.specs}
+          </p>
+          <div
+            className={`mt-8 flex flex-col md:flex-row gap-4 md:justify-center ${
+              image ? "lg:justify-start" : ""
+            }`}
+          >
+            <Button href={whatsappHref()}>{hero.primaryCta}</Button>
+            <Button href="/#portafolio" variant="secondary">
               {hero.secondaryCta}
-            </a>
+            </Button>
           </div>
         </div>
 
-        <div className="flex flex-col justify-center gap-4 md:pl-6">
-          {hero.stats.map((stat, idx) => (
-            <div key={idx} className="border-l-2 border-blue pl-4">
-              <b className="font-serif text-[26px] font-medium block text-ink">
-                {stat.title}
-              </b>
-              <span className="text-[13px] text-soft">
-                {stat.subtitle}
-              </span>
+        {image && (
+          <div className="mt-8 md:mt-12 lg:mt-0 lg:col-span-7">
+
+            <div className="bg-paper-warm rounded-[12px] p-4 md:p-8">
+              <div className="relative aspect-[16/10] overflow-hidden rounded-[4px] border-2 border-ink bg-white">
+                <Image
+                  src={image}
+                  alt={`Captura de ${project.title}: ejemplo de sitio web entregado por Bitalogics`}
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 58vw, 100vw"
+                  className="object-cover object-top"
+                />
+              </div>
             </div>
-          ))}
-        </div>
+          </div>
+        )}
       </div>
     </header>
   );
