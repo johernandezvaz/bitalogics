@@ -23,6 +23,24 @@ export const siteContent = {
     specs: "7 días · desde $2,500 MXN · sin plantillas",
     primaryCta: "Cotizar por WhatsApp",
     secondaryCta: "Ver ejemplos",
+    projectId: "6",
+    strip: [
+      {
+        label: "Páginas web",
+        description: "Listas en 7 días",
+        href: "/#sitios-web",
+      },
+      {
+        label: "Sistemas a la medida",
+        description: "Citas, inventario, paneles",
+        href: "/#sistemas",
+      },
+      {
+        label: "Sistemas embebidos",
+        description: "Monitoreo y alertas en tu celular",
+        href: "/#iot",
+      },
+    ],
   },
   services: {
     eyebrow: "Servicios",

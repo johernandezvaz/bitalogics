@@ -14,7 +14,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col">
-      <Nav />
+      <Nav darkHero />
       <main>
         <Hero />
         {extraSections.map((section) => (
