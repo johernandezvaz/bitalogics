@@ -1,13 +1,16 @@
 export const siteContent = {
   nav: {
-    brand: "Bitalogics",
+    brand: "bitalogics",
+    logoAlt: "Logotipo de Bitalogics, desarrollo de software en Chihuahua",
     links: [
-      { label: "Servicios", href: "#servicios" },
-      { label: "Portafolio", href: "#portafolio" },
-      { label: "Nosotros", href: "#nosotros" },
-      { label: "Contacto", href: "#contacto" },
+      { label: "Servicios", href: "/#servicios" },
+      { label: "Portafolio", href: "/#portafolio" },
+      { label: "Nosotros", href: "/#nosotros" },
+      { label: "Contacto", href: "/#contacto" },
     ],
     cta: "Iniciar proyecto",
+    menuOpenLabel: "Abrir menú",
+    menuCloseLabel: "Cerrar menú",
   },
   hero: {
     eyebrow: "Desarrollo de software · Chihuahua, México",

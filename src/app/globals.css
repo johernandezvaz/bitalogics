@@ -22,7 +22,13 @@
 
   --font-sans: var(--font-inter), sans-serif;
 
+  --ease-site: cubic-bezier(0.5, 0, 0, 0.75);
+
   --breakpoint-md: 720px;
+}
+
+html {
+  scroll-padding-top: 72px;
 }
 
 body {
