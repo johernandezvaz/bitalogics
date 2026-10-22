@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="9 2 108 108" width="512" height="512" role="img" aria-label="Bitalogics">
+  <title>Bitalogics — logo</title>
+  <!-- Geometría: trazo S = 10 · compuerta AND de 46 de alto (radio 23) · entradas a 1/4 y 3/4 -->
+  <g fill="none" stroke="#16283F" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Asta + panza de la b = compuerta AND, en un solo trazo -->
+    <path d="M40 16 V96 H58 A23 23 0 0 0 58 50 H40"/>
+    <!-- Entradas -->
+    <path d="M22 61.5 H40"/>
+    <path d="M22 84.5 H40"/>
+    <!-- Salida -->
+    <path d="M81 73 H92"/>
+  </g>
+  <!-- Nodo de salida -->
+  <circle cx="101" cy="73" r="7" fill="#C98A3E" stroke="#16283F" stroke-width="4"/>
+</svg>
