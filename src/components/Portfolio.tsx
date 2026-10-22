@@ -14,12 +14,22 @@ export default function Portfolio({ featuredOnly = true }: PortfolioProps) {
   const { portfolio } = siteContent;
   const { ref, isVisible } = useScrollReveal();
 
-  const displayedProjects = featuredOnly
-    ? projects.filter((p) => p.destacado)
-    : projects;
-
   const SectionHeading = featuredOnly ? "h2" : "h1";
   const CardHeading = featuredOnly ? "h3" : "h2";
+
+  // Proyectos industriales: siempre se muestran destacados primero (16:9, ancho completo)
+  const industrialProjects = projects.filter((p) => p.tag === "industrial");
+
+  // Proyectos del grid: excluye industriales; en home solo destacados
+  const gridProjects = featuredOnly
+    ? projects.filter((p) => p.tag !== "industrial" && p.destacado)
+    : projects.filter((p) => p.tag !== "industrial");
+
+  const tagLabel = (tag: string) => {
+    if (tag === "industrial") return portfolio.tags.industrial;
+    if (tag === "real") return portfolio.tags.real;
+    return portfolio.tags.concept;
+  };
 
   return (
     <section
@@ -29,11 +39,12 @@ export default function Portfolio({ featuredOnly = true }: PortfolioProps) {
     >
       <div className="max-w-[1200px] mx-auto">
 
+        {/* ── Cabecera ──────────────────────────────────────── */}
         <div
           className={`flex flex-col md:flex-row md:items-end justify-between mb-[64px] gap-4 reveal-item ${isVisible ? "is-visible" : ""
             }`}
         >
-          <div className="max-w-[560px]">
+          <div className="max-w-[600px]">
             <SectionHeading className="text-[32px] md:text-[40px] leading-[1.2] font-medium text-ink">
               {featuredOnly ? portfolio.title : portfolio.pageTitle}
             </SectionHeading>
@@ -45,7 +56,7 @@ export default function Portfolio({ featuredOnly = true }: PortfolioProps) {
             <div className="flex-shrink-0">
               <Link
                 href="/portafolio"
-                className="text-[14px] font-normal text-soft hover:text-ink transition-colors duration-[330ms] underline underline-offset-4 no-underline hover:underline"
+                className="text-[14px] font-normal text-soft hover:text-ink transition-colors duration-[330ms] underline underline-offset-4"
               >
                 {portfolio.viewAllCta}
               </Link>
@@ -53,16 +64,10 @@ export default function Portfolio({ featuredOnly = true }: PortfolioProps) {
           )}
         </div>
 
-        <div
-          className="grid gap-[24px]"
-          style={{
-            gridTemplateColumns:
-              "repeat(auto-fit, minmax(min(100%, 420px), 1fr))",
-          }}
-        >
-          {displayedProjects.map((project, index) => {
-            const isReal = project.tag === "real";
-            return (
+        {/* ── Bloque industrial: cada proyecto a ancho completo, 16:9 ── */}
+        {industrialProjects.length > 0 && (
+          <div className="flex flex-col gap-[48px] mb-[64px]">
+            {industrialProjects.map((project, index) => (
               <div
                 key={project.id}
                 className={`reveal-item ${isVisible ? "is-visible" : ""}`}
@@ -70,12 +75,66 @@ export default function Portfolio({ featuredOnly = true }: PortfolioProps) {
                   transitionDelay: isVisible ? `${index * 80}ms` : "0ms",
                 }}
               >
+                {/* Captura 16:9, radio 12px, ancho completo */}
+                <div className="relative aspect-video overflow-hidden rounded-[12px] bg-paper-warm">
+                  {project.image ? (
+                    <Image
+                      src={project.image}
+                      alt={`Pantalla de operación: ${project.title}`}
+                      fill
+                      sizes="(max-width: 720px) 100vw, 1200px"
+                      className="object-cover object-top"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center">
+                      <span className="text-[14px] font-normal text-soft text-center px-6">
+                        {project.title}
+                      </span>
+                    </div>
+                  )}
+                </div>
 
+                {/* Metadatos debajo */}
+                <div className="mt-[16px]">
+                  <span className="block text-[14px] font-normal text-soft mb-[4px]">
+                    {tagLabel(project.tag)}
+                  </span>
+                  <CardHeading className="text-[18px] leading-[1.3] font-medium text-ink mb-[4px]">
+                    {project.title}
+                  </CardHeading>
+                  <p className="text-[16px] leading-[1.6] font-normal text-body m-0">
+                    {project.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {gridProjects.length > 0 && (
+          <div
+            className="grid gap-[24px]"
+            style={{
+              gridTemplateColumns:
+                "repeat(auto-fit, minmax(min(100%, 420px), 1fr))",
+            }}
+          >
+            {gridProjects.map((project, index) => (
+              <div
+                key={project.id}
+                className={`reveal-item ${isVisible ? "is-visible" : ""}`}
+                style={{
+                  transitionDelay: isVisible
+                    ? `${(industrialProjects.length + index) * 80}ms`
+                    : "0ms",
+                }}
+              >
                 <div className="relative aspect-[3/2] overflow-hidden rounded-[12px] bg-paper-warm">
                   {project.image ? (
                     <Image
                       src={project.image}
-                      alt={`Captura del sitio web del proyecto ${project.title}`}
+                      alt={`Captura del proyecto ${project.title}`}
                       fill
                       sizes="(max-width: 720px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-cover object-top"
@@ -90,9 +149,10 @@ export default function Portfolio({ featuredOnly = true }: PortfolioProps) {
                   )}
                 </div>
 
+                {/* Metadatos debajo */}
                 <div className="mt-[16px]">
                   <span className="block text-[14px] font-normal text-soft mb-[4px]">
-                    {isReal ? portfolio.tags.real : portfolio.tags.concept}
+                    {tagLabel(project.tag)}
                   </span>
                   <CardHeading className="text-[18px] leading-[1.3] font-medium text-ink mb-[4px]">
                     {project.title}
@@ -102,10 +162,11 @@ export default function Portfolio({ featuredOnly = true }: PortfolioProps) {
                   </p>
                 </div>
               </div>
-            );
-          })}
-        </div>
+            ))}
+          </div>
+        )}
 
+        {/* CTA móvil al final */}
         {featuredOnly && (
           <div className="mt-[48px] text-center md:hidden">
             <Link
@@ -116,6 +177,7 @@ export default function Portfolio({ featuredOnly = true }: PortfolioProps) {
             </Link>
           </div>
         )}
+
       </div>
     </section>
   );

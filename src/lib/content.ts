@@ -58,17 +58,18 @@ export const siteContent = {
   },
   portfolio: {
     eyebrow: "Portafolio",
-    title: "Portafolio de sitios web y tiendas en línea",
+    title: "Software industrial, sitios web y tiendas en línea",
     intro:
-      "Este portafolio incluye tanto proyectos desarrollados para clientes como exploraciones de diseño propias del estudio.",
+      "Proyectos desarrollados para clientes y exploraciones de diseño del estudio, con etiqueta honesta en cada caso.",
     viewAllCta: "Ver todos los proyectos",
     backToHomeCta: "← Volver al inicio",
-    pageTitle: "Portafolio: páginas web y tiendas en línea en Chihuahua",
+    pageTitle: "Portafolio: software industrial, páginas web y tiendas en línea",
     pageSubtitle:
       "Explora nuestro trabajo de cliente y las exploraciones de diseño que hemos desarrollado como estudio.",
     tags: {
       real: "Proyecto de cliente",
       concept: "Proyecto de estudio",
+      industrial: "Software industrial",
     },
   },
   about: {
@@ -117,11 +118,11 @@ export const siteContent = {
     },
     {
       id: "iot",
-      title: "Sistemas embebidos e IoT",
+      title: "Sistemas embebidos",
       valueLine:
-        "Tarjetas ESP32, sensores y monitoreo remoto para medir y controlar tus equipos.",
-      specs: "ESP32 · sensores · monitoreo remoto · alertas",
-      primaryCta: "Cotizar prototipo",
+        "Monitoreo remoto y automatización para que tus equipos te avisen antes de que algo falle.",
+      specs: "Alertas · monitoreo remoto · automatización · control en tu celular",
+      primaryCta: "Cotizar sistema",
       secondaryCta: "",
       surface: "deep" as const,
       projectId: "",

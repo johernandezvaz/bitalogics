@@ -14,7 +14,8 @@ Bitalogics es una sala de exhibición digital. Cada pantalla muestra **un produc
 En Tesla, el producto es un coche y la fotografía carga toda la emoción. En Bitalogics, el producto es **lo que el cliente recibe**:
 
 - **Sitios y sistemas entregados**, mostrados como capturas reales dentro de marcos de celular o navegador.
-- **Dispositivos embebidos**, mostrados como fotos de estudio o renders limpios de la tarjeta y su carcasa.
+- **Sistemas embebidos**, mostrados como el sistema terminado y funcionando (el equipo instalado, su carcasa y la alerta que llega al celular), nunca como la tarjeta electrónica sola.
+- **Software industrial**, mostrado con capturas reales de las pantallas de operación. Es el trabajo de mayor peso y abre el portafolio.
 - **Ofertas empaquetadas** (por ejemplo, *Tu negocio en línea en 7 días*), presentadas como un modelo: nombre, una línea de valor, especificaciones y dos botones.
 
 No hay bordes decorativos, degradados, patrones, texturas ni sombras. El azul marino, el azul y el dorado de la marca se usan con la misma disciplina con la que Tesla usa su único azul: **cada color tiene un trabajo y no hace otro**.
@@ -88,7 +89,7 @@ No hay degradados en ninguna parte. La profundidad viene de la imagen de product
 
 ### Familia
 - **Inter** (variable, `next/font/google`), con `font-optical-sizing: auto` para que el navegador ajuste los tamaños grandes en modo display. El reparto *Display/Text* de Tesla lo resuelve el eje óptico de la misma familia.
-- **Se retiran** Fraunces (serif) y JetBrains Mono de la interfaz. La única excepción es JetBrains Mono para **datos técnicos literales** en fichas de embebidos (nombres de pines, protocolos, comandos); nunca en títulos, etiquetas ni botones.
+- **Se retiran** Fraunces (serif) y JetBrains Mono de la interfaz.
 
 ### Jerarquía
 | Rol | Tamaño | Peso | Interlineado | Notas |
@@ -211,8 +212,8 @@ La imagen es el diseño. Si una sección no tiene una imagen real del producto, 
 
 **Sí**
 - **Capturas reales** de sitios entregados, dentro de marcos planos de celular o navegador (contorno `ink` de 2 px, sin sombra ni reflejo), centradas sobre `paper-warm`.
-- **Fotos de estudio de los dispositivos:** fondo `white` o `deep` liso, ángulo 3/4, luz suave y sin elementos alrededor.
-- **Renders 3D de tarjetas** (KiCad o similar) mientras no exista la foto real.
+- **Capturas del software industrial**, a sangre o en marco plano de navegador o monitor, mostrando la pantalla de operación real.
+- **Sistemas embebidos terminados:** el equipo en su carcasa, instalado donde trabaja (en el refrigerador, el tinaco o la puerta), o en foto de estudio sobre fondo `white` o `deep` liso. Siempre que se pueda, junto a la captura de la alerta o el panel en el celular. **No se muestran tarjetas electrónicas sueltas.**
 - Imágenes servidas desde Cloudinary con `next/image`, `sizes` correcto y `object-fit: cover` para cada formato.
 
 **No**
@@ -222,7 +223,13 @@ La imagen es el diseño. Si una sección no tiene una imagen real del producto, 
 - Mockups 3D inclinados con sombras dramáticas.
 - Logos de clientes como decoración sin el proyecto detrás.
 
-**Datos del cliente:** todas las capturas se revisan antes de publicarse. No deben mostrar nombres, teléfonos, correos ni datos reales de usuarios finales.
+**Datos del cliente:** todas las capturas se revisan antes de publicarse. No deben mostrar nombres, teléfonos, correos ni datos reales de usuarios finales. En el software industrial, además, se ocultan o difuminan el nombre y logo de la planta o del cliente, los números de parte, los nombres de operadores y cualquier dato de producción. El proyecto se describe por el problema que resuelve, no por para quién se hizo, salvo que el cliente lo autorice por escrito.
+
+### Cómo se habla de embebidos
+Vendemos **sistemas y resultados**, no tarjetas.
+- **No** se nombran plataformas ni componentes en textos de venta (ESP32, STM32, Raspberry Pi, Arduino, sensores por modelo). Al cliente le importa qué resuelve, no con qué está hecho.
+- **Sí** se nombra el sistema por lo que hace ("Monitor de temperatura con alertas") y el resultado en términos del negocio ("te avisa en WhatsApp antes de que se eche a perder la mercancía").
+- La plataforma se elige por proyecto y solo se menciona en la propuesta técnica, si el cliente la pide.
 
 ---
 
@@ -256,8 +263,8 @@ Una pantalla por idea, en este orden:
 1. **Oferta principal**, la más fácil de comprar (hoy: *Tu negocio en línea en 7 días*).
 2. **Tiendas en línea**, con una captura real de un proyecto de cliente.
 3. **Sistemas a la medida** (citas, inventario, paneles).
-4. **Embebidos e IoT**, en sección `deep`, con foto o render del dispositivo. Mientras no haya proyectos entregados, se presenta con honestidad como "prototipos" o "proyectos propios".
-5. **Trabajo real:** grid de proyectos (2 columnas en escritorio, 1 en móvil).
+4. **Sistemas embebidos**, en sección `deep`: sistemas sencillos listos para instalar, presentados por lo que resuelven (ver "Cómo se habla de embebidos"). Mientras no haya instalaciones con clientes, se presentan con honestidad como "prototipos" o "proyectos propios".
+5. **Trabajo real:** abre con los **dos sistemas de software industrial como proyectos destacados**, cada uno a ancho completo (captura 16:9, nombre, una línea sobre el problema que resuelve y etiqueta "Software industrial"). Después, el grid con el resto de proyectos (2 columnas en escritorio, 1 en móvil).
 6. **Cómo trabajamos:** cuatro pasos en una fila, solo texto (número 14/500 `soft`, título 18/500, una línea en `body`).
 7. **Contacto:** formulario corto y Andy.
 
@@ -362,7 +369,8 @@ El espacio en blanco es la señal de calidad. Que se vea **un solo mensaje a la 
 
 ### Ejemplos de instrucciones
 - "Crea la sección de oferta principal: altura mínima de pantalla completa sobre `white`, centrada. Título 'Tu negocio en línea en 7 días' en Inter 40/500 `ink`, línea de valor en 20/400 `body` y especificaciones '7 días · desde $2,500 · botón de WhatsApp' en 16/500 `ink`. Abajo, un botón primario `blue.dark` 'Cotizar por WhatsApp' (48 px de alto, radio 4 px) y un secundario `paper` 'Ver ejemplos'. Debajo, una captura real en marco plano de celular sobre `paper-warm` con radio de 12 px. Sin sombras."
-- "Crea la sección de embebidos sobre `deep`: título en `paper` 40/500, línea en `soft-on-dark`, botón primario `gold` con texto `deep` y la foto del dispositivo sobre fondo `deep` liso, sin bordes."
+- "Crea la sección de sistemas embebidos sobre `deep`: título en `paper` 40/500, línea en `soft-on-dark`, botón primario `gold` con texto `deep` y la foto del sistema instalado sobre fondo `deep` liso, sin bordes. No menciones plataformas ni componentes."
+- "Crea el bloque de proyectos destacados: los dos sistemas de software industrial, cada uno a ancho completo con captura 16:9 y radio de 12 px, nombre en 18/500 `ink`, una línea en `body` sobre el problema que resuelve y la etiqueta 'Software industrial' en 14/400 `soft`."
 - "Crea el grid de proyectos: dos columnas en escritorio y una en móvil, separación de 24 px. Cada tarjeta lleva la captura 3:2 con radio de 12 px, debajo el nombre en 18/500 `ink`, una línea en `body` y la etiqueta 'Proyecto de cliente' en 14/400 `soft`. Sin bordes ni sombras."
 - "Crea la barra persistente de WhatsApp: anclada abajo, ancho máximo de 560 px, fondo `white`, borde `line` y radio de 12 px. Andy a 32 px, el texto '¿Tienes un proyecto? Escríbenos' y un botón primario compacto. Se oculta cuando la sección de contacto está visible."
 

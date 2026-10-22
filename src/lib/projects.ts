@@ -2,12 +2,33 @@ export interface Project {
   id: string;
   title: string;
   description: string;
-  tag: "real" | "concept";
+  tag: "real" | "concept" | "industrial";
   destacado: boolean;
   image?: string;
 }
 
 export const projects: Project[] = [
+
+  {
+    id: "ind-1",
+    title: "Calculadora de perfiles estructurales",
+    description:
+      "Herramienta de escritorio para calcular y seleccionar perfiles metálicos según carga, eliminando las tablas en papel y reduciendo errores de selección.",
+    tag: "industrial",
+    destacado: true,
+    image: "/calculadora_perfiles.jpeg",
+  },
+  {
+    id: "ind-2",
+    title: "Plataforma web para laboratorio de ensayos",
+    description:
+      "Sistema para que los clientes del laboratorio soliciten ensayos, revisen resultados y descarguen reportes sin necesidad de llamar o ir en persona.",
+    tag: "industrial",
+    destacado: true,
+    image: "/ASE-CA LAB-02.png",
+  },
+
+  // Proyectos de cliente
   {
     id: "1",
     title: "Sapphirus — Tienda de Ropa Americana",
@@ -36,15 +57,6 @@ export const projects: Project[] = [
     image: "/Logo-1.png",
   },
   {
-    id: "4",
-    title: "Laboratorio de Ensayos Mecánicos",
-    description:
-      "Sitio web para un laboratorio de ensayos, con un sistema para que los clientes soliciten información sin tener que llamar o escribir directamente.",
-    tag: "real",
-    destacado: false,
-    image: "/ASE-CA LAB-02.png",
-  },
-  {
     id: "5",
     title: "Sitio para Agencia de Marketing Digital",
     description:
@@ -54,6 +66,8 @@ export const projects: Project[] = [
     image:
       "https://res.cloudinary.com/dizorsslw/image/upload/v1774266308/u6wpk55ptnxrhmsmwlwf.png",
   },
+
+  // Proyectos de estudio
   {
     id: "6",
     title: "Landing Page para Spa de Belleza",

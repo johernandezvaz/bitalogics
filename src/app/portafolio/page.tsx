@@ -7,9 +7,9 @@ import Link from "next/link";
 import { siteContent } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Portafolio de páginas web y tiendas en línea en Chihuahua",
+  title: "Portafolio: software industrial, páginas web y tiendas en línea",
   description:
-    "Conoce los sitios web y tiendas en línea que Bitalogics ha hecho para negocios de Chihuahua, junto con propuestas de diseño propias.",
+    "Software industrial, sitios web y tiendas en línea desarrollados por Bitalogics en Chihuahua, con etiqueta honesta en cada proyecto.",
   alternates: { canonical: "/portafolio" },
 };
 
@@ -17,13 +17,14 @@ export default function PortafolioPage() {
   const { portfolio } = siteContent;
 
   return (
-    <div className="min-h-screen flex flex-col bg-paper">
+    <div className="flex flex-col">
       <Nav />
       <main className="flex-1">
-        <div className="pt-8 px-8 max-w-[1080px] mx-auto">
+        {/* Enlace de regreso */}
+        <div className="pt-8 px-6 md:px-12 lg:px-16 max-w-[1200px] mx-auto">
           <Link
             href="/"
-            className="font-mono text-[13px] text-blue-dark hover:underline inline-block"
+            className="text-[14px] font-normal text-soft hover:text-ink transition-colors duration-[330ms] underline underline-offset-4"
           >
             {portfolio.backToHomeCta}
           </Link>
