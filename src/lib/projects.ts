@@ -6,6 +6,8 @@ export interface Project {
   destacado: boolean;
   image?: string;
   portfolioImage?: string;
+  /** "contain" para logos (no se recortan); por defecto "cover" para capturas */
+  imageFit?: "cover" | "contain";
 }
 
 export const projects: Project[] = [
@@ -27,6 +29,7 @@ export const projects: Project[] = [
     tag: "industrial",
     destacado: true,
     image: "/ASE-CA LAB-02.png",
+    imageFit: "contain",
   },
   {
     id: "ind-3",
@@ -46,6 +49,7 @@ export const projects: Project[] = [
     tag: "real",
     destacado: true,
     image: "/sapphirus-logo.png",
+    imageFit: "contain",
   },
   {
     id: "kyndred",
@@ -65,6 +69,7 @@ export const projects: Project[] = [
     tag: "real",
     destacado: true,
     image: "/fajas-maydel-logo.png",
+    imageFit: "contain",
   },
   {
     id: "3",
@@ -74,6 +79,7 @@ export const projects: Project[] = [
     tag: "real",
     destacado: false,
     image: "/Logo-1.png",
+    imageFit: "contain",
   },
   {
     id: "5",
