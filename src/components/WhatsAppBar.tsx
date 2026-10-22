@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { siteContent } from "@/lib/content";
 import { whatsappHref } from "@/lib/whatsapp";
 import { useElementVisible, useScrolledPast } from "@/hooks/useIntersection";
@@ -46,14 +45,12 @@ export default function WhatsAppBar({ cookieVisible = false }: WhatsAppBarProps)
         transition: "transform 0.33s cubic-bezier(0.5, 0, 0, 0.75)",
       }}
     >
-      <Image
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
         src="/brand/andy-base.svg"
         alt=""
         aria-hidden="true"
-        width={26}
-        height={32}
-        style={{ width: "auto" }}
-        className="flex-shrink-0"
+        style={{ width: "26px", height: "32px", flexShrink: 0 }}
       />
 
       <p

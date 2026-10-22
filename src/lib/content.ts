@@ -13,7 +13,7 @@ export const siteContent = {
     menuCloseLabel: "Cerrar menú",
   },
   whatsapp: {
-    number: "[NÚMERO WHATSAPP]",
+    number: "+525648530621",
     message: "Hola, quiero cotizar un proyecto con Bitalogics.",
   },
   hero: {
