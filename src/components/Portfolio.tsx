@@ -37,7 +37,6 @@ export default function Portfolio({ featuredOnly = true }: PortfolioProps) {
     >
       <div className="max-w-[1200px] mx-auto">
 
-        {/* ── Cabecera ──────────────────────────────────────── */}
         <div
           className={`flex flex-col md:flex-row md:items-end justify-between mb-[64px] gap-4 reveal-item ${isVisible ? "is-visible" : ""
             }`}
@@ -62,7 +61,6 @@ export default function Portfolio({ featuredOnly = true }: PortfolioProps) {
           )}
         </div>
 
-        {/* ── Bloque industrial: cada proyecto a ancho completo, 16:9 ── */}
         {industrialProjects.length > 0 && (
           <div className="flex flex-col gap-[48px] mb-[64px]">
             {industrialProjects.map((project, index) => (
@@ -73,7 +71,7 @@ export default function Portfolio({ featuredOnly = true }: PortfolioProps) {
                   transitionDelay: isVisible ? `${index * 80}ms` : "0ms",
                 }}
               >
-                {/* Captura 16:9, radio 12px, ancho completo */}
+
                 <div className="relative aspect-video overflow-hidden rounded-[12px] bg-paper-warm">
                   {project.image ? (
                     <Image
@@ -93,7 +91,6 @@ export default function Portfolio({ featuredOnly = true }: PortfolioProps) {
                   )}
                 </div>
 
-                {/* Metadatos debajo */}
                 <div className="mt-[16px]">
                   <span className="block text-[14px] font-normal text-soft mb-[4px]">
                     {tagLabel(project.tag)}
@@ -147,7 +144,6 @@ export default function Portfolio({ featuredOnly = true }: PortfolioProps) {
                   )}
                 </div>
 
-                {/* Metadatos debajo */}
                 <div className="mt-[16px]">
                   <span className="block text-[14px] font-normal text-soft mb-[4px]">
                     {tagLabel(project.tag)}
@@ -164,7 +160,6 @@ export default function Portfolio({ featuredOnly = true }: PortfolioProps) {
           </div>
         )}
 
-        {/* CTA móvil al final */}
         {featuredOnly && (
           <div className="mt-[48px] text-center md:hidden">
             <Link
