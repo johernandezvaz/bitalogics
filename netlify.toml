@@ -1,0 +1,27 @@
+# Redirección permanente del dominio anterior (silqapps.com) a bitalogics.com.
+# Requiere agregar silqapps.com (y www.silqapps.com) como alias de dominio
+# en el mismo sitio de Netlify.
+
+[[redirects]]
+  from = "https://silqapps.com/*"
+  to = "https://bitalogics.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://silqapps.com/*"
+  to = "https://bitalogics.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.silqapps.com/*"
+  to = "https://bitalogics.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.silqapps.com/*"
+  to = "https://bitalogics.com/:splat"
+  status = 301
+  force = true

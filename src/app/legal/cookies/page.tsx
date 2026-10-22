@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Política de Cookies — Bitalogics",
+  title: "Política de Cookies",
+  alternates: { canonical: "/legal/cookies" },
   description:
     "Política de Cookies de Bitalogics. Qué cookies usamos y cómo puedes gestionarlas.",
 };
@@ -17,7 +18,7 @@ export default function CookiesPage() {
       <p>
         Esta Política de Cookies explica cómo <strong>Bitalogics</strong>{" "}
         utiliza cookies y tecnologías similares cuando visitas{" "}
-        <a href="https://silqapps.com">silqapps.com</a>.
+        <a href="https://bitalogics.com">bitalogics.com</a>.
       </p>
       <p>
         Al continuar navegando o utilizando este sitio web, aceptas el uso de

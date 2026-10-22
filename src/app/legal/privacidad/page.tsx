@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Política de Privacidad — Bitalogics",
+  title: "Política de Privacidad",
+  alternates: { canonical: "/legal/privacidad" },
   description:
     "Política de Privacidad de Bitalogics. Cómo recopilamos, usamos y protegemos tu información personal.",
 };
@@ -18,7 +19,7 @@ export default function PrivacidadPage() {
         Esta Política de Privacidad describe cómo <strong>Bitalogics</strong>{" "}
         recopila, utiliza y protege tu información personal cuando visitas o
         interactúas con el sitio web{" "}
-        <a href="https://silqapps.com">silqapps.com</a>.
+        <a href="https://bitalogics.com">bitalogics.com</a>.
       </p>
       <p>
         Al utilizar este sitio web, aceptas las prácticas descritas en esta

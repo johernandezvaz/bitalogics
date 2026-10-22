@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Términos y Condiciones — Bitalogics",
+  title: "Términos y Condiciones",
+  alternates: { canonical: "/legal/terminos" },
   description:
     "Términos y Condiciones de uso del sitio web de Bitalogics. Última actualización: Marzo 2026.",
 };
@@ -17,7 +18,7 @@ export default function TerminosPage() {
       <p>
         Bienvenido a <strong>Bitalogics</strong>. Estos Términos y Condiciones
         rigen el uso del sitio web{" "}
-        <a href="https://silqapps.com">silqapps.com</a> y de cualquier
+        <a href="https://bitalogics.com">bitalogics.com</a> y de cualquier
         servicio, herramienta o contenido relacionado proporcionado por
         Bitalogics.
       </p>

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import Portfolio from "@/components/Portfolio";
 import Contact from "@/components/Contact";
@@ -5,10 +6,11 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 import { siteContent } from "@/lib/content";
 
-export const metadata = {
-  title: "Portafolio — Bitalogics",
+export const metadata: Metadata = {
+  title: "Portafolio de páginas web y tiendas en línea en Chihuahua",
   description:
-    "Explora nuestro trabajo de cliente y las exploraciones de diseño que hemos desarrollado como estudio.",
+    "Conoce los sitios web y tiendas en línea que Bitalogics ha hecho para negocios de Chihuahua, junto con propuestas de diseño propias.",
+  alternates: { canonical: "/portafolio" },
 };
 
 export default function PortafolioPage() {

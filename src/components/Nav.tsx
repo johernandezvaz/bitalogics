@@ -14,7 +14,7 @@ export default function Nav() {
         >
           <Image
             src="/logo.png"
-            alt={nav.brand}
+            alt="Logotipo de Bitalogics, desarrollo de software en Chihuahua"
             width={120}
             height={32}
             className="w-auto h-[28px] object-contain"

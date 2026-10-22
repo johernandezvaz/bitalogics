@@ -11,9 +11,9 @@ export const siteContent = {
   },
   hero: {
     eyebrow: "Desarrollo de software · Chihuahua, México",
-    titleMain: "Donde la intuición humana",
-    titleMono: "se encuentra con la lógica del código.",
-    lead: "Creamos las herramientas digitales que tu negocio necesita cómo sitios web, sistemas internos y soluciones a la medida explicado en términos simples, sin tecnicismos.",
+    titleMain: "Páginas web en Chihuahua y software a la medida",
+    titleMono: "Tu negocio en línea en 7 días, desde $2,500 MXN.",
+    lead: "Creamos páginas web, tiendas en línea, sistemas a la medida y soluciones de sistemas embebidos e IoT para pymes y emprendedores de Chihuahua y el norte de México, explicado en términos simples.",
     primaryCta: "Hablemos de tu proyecto",
     secondaryCta: "Ver portafolio",
     stats: [
@@ -33,42 +33,43 @@ export const siteContent = {
   },
   services: {
     eyebrow: "Servicios",
-    title: "Cuatro formas de trabajar contigo",
+    title: "Servicios de páginas web, software e IoT en Chihuahua",
     items: [
       {
         num: "01",
-        title: "Sitios y sistemas web",
+        title: "Tu negocio en línea en 7 días",
+        price: "2500",
         description:
-          "Tu página, tienda o sistema en línea, hecho a la medida de cómo trabaja realmente tu negocio — no una plantilla genérica.",
+          "Páginas web en Chihuahua para negocios locales, listas en 7 días y desde $2,500 MXN. Se ven bien en celular y te encuentran en Google.",
       },
       {
         num: "02",
-        title: "Programas para tu negocio",
+        title: "Tienda en línea para negocios",
         description:
-          "Herramientas hechas específicamente para tu operación, sin importar el giro: seguimiento de procesos, control de inventario, generación de reportes, y más.",
+          "Vende tus productos por internet con catálogo, carrito y pagos, pensada para comprar fácil desde el celular.",
       },
       {
         num: "03",
-        title: "Automatización de procesos",
+        title: "Software a la medida",
         description:
-          "Conectamos tus herramientas de trabajo para que la información fluya sola — sin captura manual ni tareas repetidas.",
+          "Desarrollo de software a la medida en Chihuahua: sistemas de citas, inventario y paneles de control hechos para cómo trabaja tu negocio.",
       },
       {
         num: "04",
-        title: "Asesoría técnica",
+        title: "Sistemas embebidos e IoT",
         description:
-          "Te ayudamos a decidir qué necesitas de verdad, explicado en términos simples, antes de invertir en desarrollo.",
+          "Tarjetas ESP32, sensores y monitoreo remoto para medir, controlar y recibir avisos de tus equipos desde cualquier lugar.",
       },
     ],
   },
   portfolio: {
     eyebrow: "Portafolio",
-    title: "Trabajo de cliente y exploraciones propias",
+    title: "Portafolio de sitios web y tiendas en línea",
     intro:
       "Este portafolio incluye tanto proyectos desarrollados para clientes como exploraciones de diseño propias del estudio.",
     viewAllCta: "Ver todos los proyectos",
     backToHomeCta: "← Volver al inicio",
-    pageTitle: "Todos nuestros proyectos",
+    pageTitle: "Portafolio: páginas web y tiendas en línea en Chihuahua",
     pageSubtitle:
       "Explora nuestro trabajo de cliente y las exploraciones de diseño que hemos desarrollado como estudio.",
     tags: {

@@ -1,7 +1,14 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Fraunces, JetBrains_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import CookieBanner from "@/components/CookieBanner";
+import {
+  SITE_URL,
+  SITE_NAME,
+  SITE_TITLE,
+  SITE_DESCRIPTION,
+  buildProfessionalServiceJsonLd,
+} from "@/lib/seo";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -24,10 +31,34 @@ const inter = Inter({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  themeColor: "#0E1B2E",
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
-  title: "Bitalogics — Desarrollo de software con lógica humana",
-  description:
-    "Creamos las herramientas digitales que tu negocio necesita — sitios web, sistemas internos y soluciones a la medida — explicado en términos simples, sin tecnicismos.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: `${SITE_NAME} | ${SITE_TITLE}`,
+    template: "%s | Bitalogics",
+  },
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    siteName: SITE_NAME,
+    locale: "es_MX",
+    title: `${SITE_NAME} | ${SITE_TITLE}`,
+    description: SITE_DESCRIPTION,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${SITE_NAME} | ${SITE_TITLE}`,
+    description: SITE_DESCRIPTION,
+  },
+  robots: { index: true, follow: true },
   icons: {
     icon: [
       { url: "/favicon.ico" },
@@ -48,10 +79,19 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="es"
+      lang="es-MX"
       className={`${fraunces.variable} ${jetbrainsMono.variable} ${inter.variable} scroll-smooth`}
     >
       <body className="bg-paper text-ink font-sans antialiased selection:bg-blue selection:text-white">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(buildProfessionalServiceJsonLd()).replace(
+              /</g,
+              "\\u003c",
+            ),
+          }}
+        />
         {children}
         <CookieBanner />
       </body>
