@@ -1,72 +1,56 @@
-import Image from "next/image";
 import Button from "@/components/Button";
 import { siteContent } from "@/lib/content";
-import { projects } from "@/lib/projects";
 import { whatsappHref } from "@/lib/whatsapp";
 
 export default function Hero() {
   const { hero } = siteContent;
-  const project = projects.find((p) => p.id === hero.projectId);
-  const image = project?.image;
 
   return (
-    <header className="min-h-[calc(100svh-72px)] bg-deep flex flex-col px-6 md:px-12 lg:px-16">
+    <header className="relative min-h-[calc(100svh-72px)] bg-deep flex flex-col overflow-hidden">
 
-      {/* ── Contenido principal ─────────────────────────────────── */}
-      <div className="flex-1 flex items-center justify-center py-12 md:py-16">
-        <div className="w-full max-w-[1200px] mx-auto grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-16">
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover object-center"
+        style={{ opacity: 0.55 }}
+      >
+        <source src="/bitalogics_hero.mp4" type="video/mp4" />
+      </video>
 
-          {/* Texto — ocupa todo el ancho en móvil, 5/12 en escritorio */}
-          <div className="text-center lg:text-left lg:col-span-5">
-            <h1 className="text-[32px] md:text-[40px] leading-[1.2] font-medium text-paper text-balance">
-              {hero.title}
-            </h1>
-            <p className="mt-4 text-[18px] md:text-[20px] leading-[1.4] font-normal text-soft-on-dark">
-              {hero.valueLine}
-            </p>
-            <p className="mt-4 text-[16px] leading-[1.4] font-medium text-paper">
-              {hero.specs}
-            </p>
-            <div className="mt-8 flex flex-col md:flex-row gap-4 justify-center lg:justify-start">
-              <Button href={whatsappHref()} variant="primary" surface="dark">
-                {hero.primaryCta}
-              </Button>
-              <Button href="/#portafolio" variant="secondary" surface="dark">
-                {hero.secondaryCta}
-              </Button>
-            </div>
+      <div
+        className="absolute inset-0"
+        style={{ background: "rgba(14,27,46,0.45)" }}
+        aria-hidden="true"
+      />
+
+      <div className="relative z-10 flex-1 flex items-center justify-center px-6 md:px-12 lg:px-16 py-12 md:py-16">
+        <div className="text-center max-w-[720px] mx-auto">
+          <h1 className="text-[32px] md:text-[40px] leading-[1.2] font-medium text-paper text-balance">
+            {hero.title}
+          </h1>
+          <p className="mt-4 text-[18px] md:text-[20px] leading-[1.4] font-normal text-soft-on-dark">
+            {hero.valueLine}
+          </p>
+          <p className="mt-4 text-[16px] leading-[1.4] font-medium text-paper">
+            {hero.specs}
+          </p>
+          <div className="mt-8 flex flex-col md:flex-row gap-4 justify-center">
+            <Button href={whatsappHref()} variant="primary" surface="dark">
+              {hero.primaryCta}
+            </Button>
+            <Button href="/#portafolio" variant="secondary" surface="dark">
+              {hero.secondaryCta}
+            </Button>
           </div>
-
-          {/* Marco de celular — oculto en móvil, visible desde md ── */}
-          {image && (
-            <div className="hidden md:flex lg:col-span-7 items-center justify-center">
-              {/* Contenedor paper-warm per DESIGN.md §6 */}
-              <div className="bg-paper-warm rounded-[12px] p-4 md:p-6 w-full max-w-[340px] lg:max-w-[420px]">
-                {/* Marco plano de celular: borde ink 2px, sin sombra, sin reflejo */}
-                <div className="relative overflow-hidden rounded-[8px] border-2 border-ink aspect-[9/16]">
-                  <Image
-                    src={image}
-                    alt={`Ejemplo de sitio web entregado por Bitalogics — ${project?.title ?? ""}`}
-                    fill
-                    priority
-                    sizes="(min-width: 1024px) 420px, 340px"
-                    className="object-cover object-top"
-                  />
-                </div>
-              </div>
-            </div>
-          )}
         </div>
       </div>
 
-      {/* ── Franja de productos ─────────────────────────────────────
-          Al pie del hero, dentro de la primera pantalla (100svh).
-          Tres enlaces a secciones. Primero activo con línea dorada.
-          Móvil: fila con scroll horizontal, áreas táctiles 44 px.
-      ─────────────────────────────────────────────────────────────── */}
       <nav
         aria-label="Secciones del sitio"
-        className="border-t border-white/[0.08] overflow-x-auto"
+        className="relative z-10 border-t border-white/[0.08] overflow-x-auto"
       >
         <ul className="flex md:grid md:grid-cols-3 divide-x divide-white/[0.08] list-none m-0 p-0 min-w-max md:min-w-0">
           {hero.strip.map((item, i) => (
