@@ -16,10 +16,7 @@ export default function Home() {
     <div className="flex flex-col">
       <Nav />
       <main>
-
         <Hero />
-
-
         {extraSections.map((section) => (
           <ServiceSection key={section.id} data={section} />
         ))}

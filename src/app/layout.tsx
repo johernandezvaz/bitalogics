@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import CookieBanner from "@/components/CookieBanner";
+import BottomBars from "@/components/BottomBars";
 import {
   SITE_URL,
   SITE_NAME,
@@ -68,7 +68,10 @@ export default function RootLayout({
       lang="es-MX"
       className={`${inter.variable} scroll-smooth`}
     >
-      <body className="bg-white text-body font-sans antialiased selection:bg-blue selection:text-white">
+      <body
+        className="bg-white text-body font-sans antialiased selection:bg-blue selection:text-white"
+        style={{ paddingBottom: "88px" }}
+      >
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -79,7 +82,7 @@ export default function RootLayout({
           }}
         />
         {children}
-        <CookieBanner />
+        <BottomBars />
       </body>
     </html>
   );

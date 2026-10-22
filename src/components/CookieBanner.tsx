@@ -3,88 +3,114 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-export default function CookieBanner() {
+interface CookieBannerProps {
+  onVisibilityChange?: (visible: boolean) => void;
+}
+
+export default function CookieBanner({
+  onVisibilityChange,
+}: CookieBannerProps) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const accepted = localStorage.getItem("bl_cookies_accepted");
-    if (!accepted) setVisible(true);
-  }, []);
+    const isVisible = !accepted;
+    setVisible(isVisible);
+    onVisibilityChange?.(isVisible);
+  }, [onVisibilityChange]);
 
   const accept = () => {
     localStorage.setItem("bl_cookies_accepted", "1");
     setVisible(false);
+    onVisibilityChange?.(false);
   };
-
-  if (!visible) return null;
 
   return (
     <div
       role="dialog"
       aria-label="Aviso de cookies"
+      aria-modal="false"
       style={{
         position: "fixed",
-        bottom: 0,
-        left: 0,
-        right: 0,
-        zIndex: 2000,
-        background: "var(--color-deep)",
-        borderTop: "1px solid rgba(255,255,255,0.08)",
-        padding: "18px 24px",
+        bottom: "16px",
+        left: "50%",
+        transform: visible
+          ? "translateX(-50%) translateY(0)"
+          : "translateX(-50%) translateY(calc(100% + 24px))",
+        zIndex: 1100,
+        width: "calc(100% - 32px)",
+        maxWidth: "560px",
+        background: "var(--color-white)",
+        border: "1px solid var(--color-line)",
+        borderRadius: "12px",
+        padding: "16px 20px",
         display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        gap: "16px",
-        flexWrap: "wrap",
+        flexDirection: "column",
+        gap: "12px",
+        transition: "transform 0.33s cubic-bezier(0.5, 0, 0, 0.75)",
       }}
     >
+
       <p
         style={{
           margin: 0,
-          fontSize: "13px",
-          color: "rgba(255,255,255,0.75)",
+          fontSize: "14px",
+          fontWeight: 400,
           lineHeight: 1.6,
-          fontFamily: "var(--font-inter), sans-serif",
-          maxWidth: "680px",
+          color: "var(--color-body)",
         }}
       >
-        Usamos cookies esenciales para que el sitio funcione correctamente y
-        cookies de análisis para entender cómo lo utilizan nuestros visitantes.
-        Al continuar navegando aceptas nuestra{" "}
+        Usamos cookies esenciales para que el sitio funcione y cookies de
+        análisis para mejorar la experiencia. Al aceptar, confirmas que leíste
+        nuestra{" "}
         <Link
           href="/legal/cookies"
           style={{
-            color: "var(--color-blue)",
+            color: "var(--color-blue-dark)",
             textDecoration: "underline",
+            textUnderlineOffset: "4px",
           }}
         >
-          Política de Cookies
+          Política de cookies
         </Link>
         .
       </p>
 
-      <div style={{ display: "flex", gap: "10px", flexShrink: 0 }}>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "16px",
+          flexWrap: "wrap",
+        }}
+      >
+
         <button
           onClick={accept}
           style={{
-            background: "var(--color-blue)",
-            color: "#fff",
-            border: "none",
-            borderRadius: "2px",
-            padding: "9px 20px",
-            fontSize: "13px",
+            display: "inline-flex",
+            alignItems: "center",
+            justifyContent: "center",
+            height: "40px",
+            minWidth: "120px",
+            padding: "0 20px",
+            borderRadius: "4px",
+            background: "var(--color-blue-dark)",
+            color: "#ffffff",
+            fontSize: "15px",
             fontWeight: 500,
-            fontFamily: "var(--font-inter), sans-serif",
+            lineHeight: 1.2,
+            border: "none",
             cursor: "pointer",
-            transition: "background 200ms",
+            transition: "background 0.33s cubic-bezier(0.5, 0, 0, 0.75)",
           }}
           onMouseEnter={(e) =>
-            ((e.currentTarget as HTMLButtonElement).style.background =
-              "var(--color-blue-dark)")
+          ((e.currentTarget as HTMLButtonElement).style.background =
+            "var(--color-ink)")
           }
           onMouseLeave={(e) =>
-            ((e.currentTarget as HTMLButtonElement).style.background =
-              "var(--color-blue)")
+          ((e.currentTarget as HTMLButtonElement).style.background =
+            "var(--color-blue-dark)")
           }
         >
           Aceptar
@@ -93,20 +119,23 @@ export default function CookieBanner() {
         <Link
           href="/legal/cookies"
           style={{
-            background: "transparent",
-            color: "rgba(255,255,255,0.6)",
-            border: "1px solid rgba(255,255,255,0.2)",
-            borderRadius: "2px",
-            padding: "9px 16px",
-            fontSize: "13px",
-            fontFamily: "var(--font-inter), sans-serif",
-            textDecoration: "none",
-            cursor: "pointer",
-            transition: "border-color 200ms, color 200ms",
-            display: "inline-block",
+            fontSize: "14px",
+            fontWeight: 400,
+            color: "var(--color-soft)",
+            textDecoration: "underline",
+            textUnderlineOffset: "4px",
+            transition: "color 0.33s",
           }}
+          onMouseEnter={(e) =>
+          ((e.currentTarget as HTMLAnchorElement).style.color =
+            "var(--color-ink)")
+          }
+          onMouseLeave={(e) =>
+          ((e.currentTarget as HTMLAnchorElement).style.color =
+            "var(--color-soft)")
+          }
         >
-          Más info
+          Configurar
         </Link>
       </div>
     </div>
