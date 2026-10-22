@@ -1,10 +1,11 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import Image from "next/image";
 import { projects } from "@/lib/projects";
 import { siteContent } from "@/lib/content";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { CardTimeMachine, type CardTimeMachineItem } from "@/components/cards/CardTimeMachine";
 
 interface PortfolioProps {
   featuredOnly?: boolean;
@@ -19,7 +20,7 @@ export default function Portfolio({ featuredOnly = true }: PortfolioProps) {
 
   const industrialProjects = projects.filter((p) => p.tag === "industrial");
 
-  const gridProjects = featuredOnly
+  const carouselProjects = featuredOnly
     ? projects.filter((p) => p.tag !== "industrial" && p.destacado)
     : projects.filter((p) => p.tag !== "industrial");
 
@@ -28,6 +29,14 @@ export default function Portfolio({ featuredOnly = true }: PortfolioProps) {
     if (tag === "real") return portfolio.tags.real;
     return portfolio.tags.concept;
   };
+
+  const carouselItems: CardTimeMachineItem[] = carouselProjects.map((p) => ({
+    src: (p.portfolioImage ?? p.image) || "",
+    alt: `Captura del proyecto ${p.title}`,
+    label: tagLabel(p.tag),
+    title: p.title,
+    description: p.description,
+  }));
 
   return (
     <section
@@ -38,8 +47,7 @@ export default function Portfolio({ featuredOnly = true }: PortfolioProps) {
       <div className="max-w-[1200px] mx-auto">
 
         <div
-          className={`flex flex-col md:flex-row md:items-end justify-between mb-[64px] gap-4 reveal-item ${isVisible ? "is-visible" : ""
-            }`}
+          className={`flex flex-col md:flex-row md:items-end justify-between mb-[64px] gap-4 reveal-item ${isVisible ? "is-visible" : ""}`}
         >
           <div className="max-w-[600px]">
             <SectionHeading className="text-[32px] md:text-[40px] leading-[1.2] font-medium text-ink">
@@ -67,11 +75,8 @@ export default function Portfolio({ featuredOnly = true }: PortfolioProps) {
               <div
                 key={project.id}
                 className={`reveal-item ${isVisible ? "is-visible" : ""}`}
-                style={{
-                  transitionDelay: isVisible ? `${index * 80}ms` : "0ms",
-                }}
+                style={{ transitionDelay: isVisible ? `${index * 80}ms` : "0ms" }}
               >
-
                 <div className="relative aspect-video overflow-hidden rounded-[12px] bg-paper-warm">
                   {project.image ? (
                     <Image
@@ -90,7 +95,6 @@ export default function Portfolio({ featuredOnly = true }: PortfolioProps) {
                     </div>
                   )}
                 </div>
-
                 <div className="mt-[16px]">
                   <span className="block text-[14px] font-normal text-soft mb-[4px]">
                     {tagLabel(project.tag)}
@@ -107,59 +111,20 @@ export default function Portfolio({ featuredOnly = true }: PortfolioProps) {
           </div>
         )}
 
-        {gridProjects.length > 0 && (
+        {carouselItems.length > 0 && (
           <div
-            className="grid gap-[24px]"
+            className={`reveal-item ${isVisible ? "is-visible" : ""}`}
             style={{
-              gridTemplateColumns:
-                "repeat(auto-fit, minmax(min(100%, 420px), 1fr))",
+              transitionDelay: isVisible
+                ? `${industrialProjects.length * 80}ms`
+                : "0ms",
             }}
           >
-            {gridProjects.map((project, index) => (
-              <div
-                key={project.id}
-                className={`reveal-item ${isVisible ? "is-visible" : ""}`}
-                style={{
-                  transitionDelay: isVisible
-                    ? `${(industrialProjects.length + index) * 80}ms`
-                    : "0ms",
-                }}
-              >
-                <div className="relative aspect-[3/2] overflow-hidden rounded-[12px] bg-paper-warm">
-                  {(project.portfolioImage ?? project.image) ? (
-                    <Image
-                      src={(project.portfolioImage ?? project.image)!}
-                      alt={`Captura del proyecto ${project.title}`}
-                      fill
-                      sizes="(max-width: 720px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover object-top"
-                      loading="lazy"
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center">
-                      <span className="text-[14px] font-normal text-soft text-center px-6">
-                        {project.title}
-                      </span>
-                    </div>
-                  )}
-                </div>
-
-                <div className="mt-[16px]">
-                  <span className="block text-[14px] font-normal text-soft mb-[4px]">
-                    {tagLabel(project.tag)}
-                  </span>
-                  <CardHeading className="text-[18px] leading-[1.3] font-medium text-ink mb-[4px]">
-                    {project.title}
-                  </CardHeading>
-                  <p className="text-[16px] leading-[1.6] font-normal text-body m-0">
-                    {project.description}
-                  </p>
-                </div>
-              </div>
-            ))}
+            <CardTimeMachine items={carouselItems} />
           </div>
         )}
 
+        {/* CTA movil */}
         {featuredOnly && (
           <div className="mt-[48px] text-center md:hidden">
             <Link
