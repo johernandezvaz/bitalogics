@@ -17,10 +17,8 @@ export default function Portfolio({ featuredOnly = true }: PortfolioProps) {
   const SectionHeading = featuredOnly ? "h2" : "h1";
   const CardHeading = featuredOnly ? "h3" : "h2";
 
-  // Proyectos industriales: siempre se muestran destacados primero (16:9, ancho completo)
   const industrialProjects = projects.filter((p) => p.tag === "industrial");
 
-  // Proyectos del grid: excluye industriales; en home solo destacados
   const gridProjects = featuredOnly
     ? projects.filter((p) => p.tag !== "industrial" && p.destacado)
     : projects.filter((p) => p.tag !== "industrial");
@@ -131,9 +129,9 @@ export default function Portfolio({ featuredOnly = true }: PortfolioProps) {
                 }}
               >
                 <div className="relative aspect-[3/2] overflow-hidden rounded-[12px] bg-paper-warm">
-                  {project.image ? (
+                  {(project.portfolioImage ?? project.image) ? (
                     <Image
-                      src={project.image}
+                      src={(project.portfolioImage ?? project.image)!}
                       alt={`Captura del proyecto ${project.title}`}
                       fill
                       sizes="(max-width: 720px) 100vw, (max-width: 1200px) 50vw, 33vw"

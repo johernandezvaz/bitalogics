@@ -5,6 +5,7 @@ export interface Project {
   tag: "real" | "concept" | "industrial";
   destacado: boolean;
   image?: string;
+  portfolioImage?: string;
 }
 
 export const projects: Project[] = [
@@ -27,6 +28,15 @@ export const projects: Project[] = [
     destacado: true,
     image: "/ASE-CA LAB-02.png",
   },
+  {
+    id: "ind-3",
+    title: "Sistema de gestión de inventario",
+    description:
+      "Panel web para control de entradas, salidas y existencias en tiempo real. Elimina hojas de cálculo y reduce descuadres de inventario.",
+    tag: "industrial",
+    destacado: true,
+    image: "/sistema_inventario.png",
+  },
 
   {
     id: "1",
@@ -36,6 +46,16 @@ export const projects: Project[] = [
     tag: "real",
     destacado: true,
     image: "/sapphirus-logo.png",
+  },
+  {
+    id: "kyndred",
+    title: "Kyndred — Plataforma de gestión",
+    description:
+      "Sistema web a la medida para gestión interna de operaciones, con tableros de control, flujos de trabajo y acceso diferenciado por rol.",
+    tag: "real",
+    destacado: true,
+    image: "/kyndred_main.png",
+    portfolioImage: "/kyndred_portfolio.png",
   },
   {
     id: "2",

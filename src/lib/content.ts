@@ -131,7 +131,7 @@ export const siteContent = {
       primaryCta: "Platicar sobre tu proyecto",
       secondaryCta: "",
       surface: "white" as const,
-      projectId: "3",
+      projectId: "kyndred",
     },
     {
       id: "iot",
