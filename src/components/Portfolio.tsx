@@ -22,26 +22,30 @@ export default function Portfolio({ featuredOnly = true }: PortfolioProps) {
   const CardHeading = featuredOnly ? "h3" : "h2";
 
   return (
-    <section id="portafolio" ref={ref} className="py-[80px] px-8 overflow-hidden">
-      <div className="max-w-[1080px] mx-auto">
+    <section
+      id="portafolio"
+      ref={ref}
+      className="bg-white py-[96px] px-6 md:px-12 lg:px-16"
+    >
+      <div className="max-w-[1200px] mx-auto">
+
         <div
-          className={`flex flex-col md:flex-row md:items-end justify-between mb-[44px] gap-4 reveal-item ${isVisible ? "is-visible" : ""
+          className={`flex flex-col md:flex-row md:items-end justify-between mb-[64px] gap-4 reveal-item ${isVisible ? "is-visible" : ""
             }`}
         >
           <div className="max-w-[560px]">
-            <span className="eyebrow block">{portfolio.eyebrow}</span>
-            <SectionHeading className="font-serif text-[30px] font-medium mt-[10px] text-ink">
+            <SectionHeading className="text-[32px] md:text-[40px] leading-[1.2] font-medium text-ink">
               {featuredOnly ? portfolio.title : portfolio.pageTitle}
             </SectionHeading>
-            <p className="text-[14.5px] text-soft mt-3 leading-relaxed">
+            <p className="text-[16px] leading-[1.6] font-normal text-body mt-4 m-0">
               {portfolio.intro}
             </p>
           </div>
           {featuredOnly && (
-            <div>
+            <div className="flex-shrink-0">
               <Link
                 href="/portafolio"
-                className="font-mono text-[13px] border border-ink text-ink px-4 py-2 rounded-[2px] inline-block no-underline hover:bg-ink hover:text-paper active:translate-y-[1px] transition-all duration-200"
+                className="text-[14px] font-normal text-soft hover:text-ink transition-colors duration-[330ms] underline underline-offset-4 no-underline hover:underline"
               >
                 {portfolio.viewAllCta}
               </Link>
@@ -49,55 +53,51 @@ export default function Portfolio({ featuredOnly = true }: PortfolioProps) {
           )}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[24px]">
+        <div
+          className="grid gap-[24px]"
+          style={{
+            gridTemplateColumns:
+              "repeat(auto-fit, minmax(min(100%, 420px), 1fr))",
+          }}
+        >
           {displayedProjects.map((project, index) => {
             const isReal = project.tag === "real";
             return (
               <div
                 key={project.id}
-                className={`border border-line rounded-[2px] overflow-hidden bg-white flex flex-col transition-all duration-200 hover:-translate-y-1 hover:border-blue hover:shadow-[0_8px_24px_rgba(22,40,63,0.08)] reveal-item ${isVisible ? "is-visible" : ""
-                  }`}
+                className={`reveal-item ${isVisible ? "is-visible" : ""}`}
                 style={{
                   transitionDelay: isVisible ? `${index * 80}ms` : "0ms",
                 }}
               >
-                <div
-                  className={`h-[120px] bg-ink relative overflow-hidden flex items-center justify-center glass-reflection ${isReal && !project.image
-                      ? "after:content-[''] after:absolute after:inset-0 after:left-[55%] after:bg-blue"
-                      : ""
-                    }`}
-                >
+
+                <div className="relative aspect-[3/2] overflow-hidden rounded-[12px] bg-paper-warm">
                   {project.image ? (
                     <Image
                       src={project.image}
                       alt={`Captura del sitio web del proyecto ${project.title}`}
                       fill
-                      sizes="(max-width: 720px) 100vw, 33vw"
-                      className="object-cover object-center"
+                      sizes="(max-width: 720px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover object-top"
+                      loading="lazy"
                     />
                   ) : (
-                    <div className="w-full h-full bg-paper-warm border-b border-line flex items-center justify-center p-4 text-center">
-                      <span className="font-mono text-[11px] text-soft uppercase tracking-wider">
+                    <div className="w-full h-full flex items-center justify-center">
+                      <span className="text-[14px] font-normal text-soft text-center px-6">
                         {project.title}
                       </span>
                     </div>
                   )}
                 </div>
-                <div className="p-[20px] flex-1 flex flex-col">
-                  <div>
-                    <span
-                      className={`inline-block font-mono text-[11px] px-[8px] py-[3px] rounded-[2px] mb-[10px] ${isReal
-                          ? "bg-blue/12 text-blue-dark"
-                          : "bg-gold/15 text-[#8a5a20]"
-                        }`}
-                    >
-                      {isReal ? portfolio.tags.real : portfolio.tags.concept}
-                    </span>
-                  </div>
-                  <CardHeading className="font-serif text-[16.5px] font-medium mb-[6px] text-ink">
+
+                <div className="mt-[16px]">
+                  <span className="block text-[14px] font-normal text-soft mb-[4px]">
+                    {isReal ? portfolio.tags.real : portfolio.tags.concept}
+                  </span>
+                  <CardHeading className="text-[18px] leading-[1.3] font-medium text-ink mb-[4px]">
                     {project.title}
                   </CardHeading>
-                  <p className="text-[13.5px] text-soft m-0 leading-relaxed">
+                  <p className="text-[16px] leading-[1.6] font-normal text-body m-0">
                     {project.description}
                   </p>
                 </div>
@@ -107,10 +107,10 @@ export default function Portfolio({ featuredOnly = true }: PortfolioProps) {
         </div>
 
         {featuredOnly && (
-          <div className="mt-8 text-center md:hidden">
+          <div className="mt-[48px] text-center md:hidden">
             <Link
               href="/portafolio"
-              className="font-mono text-[13px] border border-ink text-ink px-4 py-2 rounded-[2px] inline-block no-underline hover:bg-ink hover:text-paper active:translate-y-[1px] transition-all duration-200"
+              className="text-[14px] font-normal text-soft hover:text-ink transition-colors duration-[330ms] underline underline-offset-4"
             >
               {portfolio.viewAllCta}
             </Link>

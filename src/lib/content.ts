@@ -81,10 +81,83 @@ export const siteContent = {
     founderName: "José Hernández",
     founderTitle: "Fundador · Ingeniero en Sistemas Computacionales",
   },
+  serviceSections: [
+    {
+      id: "sitios-web",
+      title: "Tu negocio en línea en 7 días",
+      valueLine:
+        "Sitio web con Google Maps y botón de WhatsApp, listo para recibir clientes.",
+      specs: "7 días · desde $2,500 MXN · sin plantillas",
+      primaryCta: "Cotizar por WhatsApp",
+      secondaryCta: "Ver ejemplos",
+      surface: "white" as const,
+      projectId: "1",
+    },
+    {
+      id: "tiendas",
+      title: "Tienda en línea para negocios",
+      valueLine:
+        "Vende tus productos por internet con catálogo, carrito y pagos en línea.",
+      specs: "Catálogo · carrito · pagos · optimizada para celular",
+      primaryCta: "Cotizar por WhatsApp",
+      secondaryCta: "Ver ejemplo",
+      surface: "paper" as const,
+      projectId: "2",
+    },
+    {
+      id: "sistemas",
+      title: "Software a la medida",
+      valueLine:
+        "Sistemas de citas, inventario y paneles hechos para cómo trabaja tu negocio.",
+      specs: "Citas · inventario · paneles · acceso por rol",
+      primaryCta: "Platicar sobre tu proyecto",
+      secondaryCta: "",
+      surface: "white" as const,
+      projectId: "3",
+    },
+    {
+      id: "iot",
+      title: "Sistemas embebidos e IoT",
+      valueLine:
+        "Tarjetas ESP32, sensores y monitoreo remoto para medir y controlar tus equipos.",
+      specs: "ESP32 · sensores · monitoreo remoto · alertas",
+      primaryCta: "Cotizar prototipo",
+      secondaryCta: "",
+      surface: "deep" as const,
+      projectId: "",
+    },
+  ],
+  howWeWork: {
+    title: "Cómo trabajamos",
+    steps: [
+      {
+        num: "01",
+        title: "Diagnóstico",
+        description: "Entendemos cómo funciona tu negocio antes de escribir una sola línea de código.",
+      },
+      {
+        num: "02",
+        title: "Propuesta",
+        description: "Presentamos alcance, tiempo de entrega y precio por escrito, sin sorpresas.",
+      },
+      {
+        num: "03",
+        title: "Desarrollo",
+        description: "Iteramos contigo en ciclos cortos para que el resultado sea exactamente lo que necesitas.",
+      },
+      {
+        num: "04",
+        title: "Entrega",
+        description: "Capacitamos a tu equipo, entregamos el código fuente y dejamos todo funcionando.",
+      },
+    ],
+  },
   contact: {
     eyebrow: "Contacto",
     title: "¿Tienes un proyecto en mente? Hablemos.",
+    body: "Cuéntanos qué necesitas y te respondemos en menos de 24 horas.",
     cta: "Escríbenos",
+    whatsappCta: "Cotizar por WhatsApp",
     email: "mailto:hola@bitalogics.com",
   },
   footer: {
