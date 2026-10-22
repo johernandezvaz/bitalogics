@@ -34,6 +34,7 @@ export default function Contact() {
               alt=""
               width={64}
               height={80}
+              style={{ width: "auto" }}
               priority={false}
             />
           </div>

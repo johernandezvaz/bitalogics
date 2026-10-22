@@ -28,7 +28,6 @@ export const projects: Project[] = [
     image: "/ASE-CA LAB-02.png",
   },
 
-  // Proyectos de cliente
   {
     id: "1",
     title: "Sapphirus — Tienda de Ropa Americana",

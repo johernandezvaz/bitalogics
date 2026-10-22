@@ -52,6 +52,7 @@ export default function WhatsAppBar({ cookieVisible = false }: WhatsAppBarProps)
         aria-hidden="true"
         width={26}
         height={32}
+        style={{ width: "auto" }}
         className="flex-shrink-0"
       />
 
