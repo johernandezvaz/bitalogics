@@ -70,7 +70,6 @@ export default function RootLayout({
     >
       <body
         className="bg-white text-body font-sans antialiased selection:bg-blue selection:text-white"
-        style={{ paddingBottom: "88px" }}
       >
         <script
           type="application/ld+json"
