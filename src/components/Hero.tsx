@@ -1,61 +1,51 @@
-import Image from "next/image";
 import Button from "@/components/Button";
 import { siteContent } from "@/lib/content";
-import { projects } from "@/lib/projects";
 import { whatsappHref } from "@/lib/whatsapp";
-
 
 export default function Hero() {
   const { hero } = siteContent;
-  const project = projects.find((p) => p.id === hero.projectId);
-  const image = project?.image;
 
   return (
-    <header className="min-h-[calc(100svh-72px)] flex items-center bg-white px-6 md:px-12 lg:px-16 py-12 md:py-16">
-      <div
-        className={`w-full max-w-[1200px] mx-auto grid grid-cols-1 items-center text-center ${
-          image ? "lg:grid-cols-12 lg:gap-12 lg:text-left" : ""
-        }`}
+    <header className="relative min-h-[100svh] flex items-center overflow-hidden bg-deep">
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover object-center"
+        style={{ opacity: 0.55 }}
       >
-        <div className={image ? "lg:col-span-5" : "max-w-[720px] mx-auto"}>
-          <h1 className="text-[32px] md:text-[40px] leading-[1.2] font-medium text-ink text-balance">
-            {hero.title}
-          </h1>
-          <p className="mt-4 text-[18px] md:text-[20px] leading-[1.4] font-normal text-body">
-            {hero.valueLine}
-          </p>
-          <p className="mt-4 text-[16px] leading-[1.4] font-medium text-ink">
-            {hero.specs}
-          </p>
-          <div
-            className={`mt-8 flex flex-col md:flex-row gap-4 md:justify-center ${
-              image ? "lg:justify-start" : ""
-            }`}
-          >
-            <Button href={whatsappHref()}>{hero.primaryCta}</Button>
-            <Button href="/#portafolio" variant="secondary">
-              {hero.secondaryCta}
-            </Button>
-          </div>
+        <source src="/embedded_systems_hero.mp4" type="video/mp4" />
+      </video>
+
+      <div
+        className="absolute inset-0"
+        style={{ background: "rgba(14,27,46,0.45)" }}
+        aria-hidden="true"
+      />
+
+      <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6 md:px-12 lg:px-16 py-16 text-center">
+        <h1 className="text-[32px] md:text-[40px] leading-[1.2] font-medium text-paper text-balance max-w-[720px] mx-auto">
+          {hero.title}
+        </h1>
+
+        <p className="mt-4 text-[18px] md:text-[20px] leading-[1.4] font-normal text-soft-on-dark max-w-[600px] mx-auto">
+          {hero.valueLine}
+        </p>
+
+        <p className="mt-4 text-[16px] leading-[1.4] font-medium text-paper">
+          {hero.specs}
+        </p>
+
+        <div className="mt-8 flex flex-col md:flex-row gap-4 justify-center">
+          <Button href={whatsappHref()} variant="primary" surface="dark">
+            {hero.primaryCta}
+          </Button>
+          <Button href="/#portafolio" variant="secondary" surface="dark">
+            {hero.secondaryCta}
+          </Button>
         </div>
-
-        {image && (
-          <div className="mt-8 md:mt-12 lg:mt-0 lg:col-span-7">
-
-            <div className="bg-paper-warm rounded-[12px] p-4 md:p-8">
-              <div className="relative aspect-[16/10] overflow-hidden rounded-[4px] border-2 border-ink bg-white">
-                <Image
-                  src={image}
-                  alt={`Captura de ${project.title}: ejemplo de sitio web entregado por Bitalogics`}
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 58vw, 100vw"
-                  className="object-cover object-top"
-                />
-              </div>
-            </div>
-          </div>
-        )}
       </div>
     </header>
   );

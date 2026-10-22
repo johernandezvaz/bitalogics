@@ -20,10 +20,9 @@ export const siteContent = {
     title: "Tu negocio en línea en 7 días",
     valueLine:
       "Páginas web en Chihuahua con Google Maps y WhatsApp, listas para recibir clientes.",
-    specs: "7 días · desde $2,500 MXN · botón de WhatsApp",
+    specs: "7 días · desde $2,500 MXN · sin plantillas",
     primaryCta: "Cotizar por WhatsApp",
     secondaryCta: "Ver ejemplos",
-    projectId: "[IMAGEN]",
   },
   services: {
     eyebrow: "Servicios",
