@@ -17,7 +17,7 @@ export default function Hero() {
               {hero.titleMono}
             </span>
           </h1>
-          <p className="text-[16.5px] text-text-soft max-w-[440px] mb-8 leading-relaxed">
+          <p className="text-[16.5px] text-soft max-w-[440px] mb-8 leading-relaxed">
             {hero.lead}
           </p>
           <div className="flex flex-wrap gap-[14px]">
@@ -42,7 +42,7 @@ export default function Hero() {
               <b className="font-serif text-[26px] font-medium block text-ink">
                 {stat.title}
               </b>
-              <span className="text-[13px] text-text-soft">
+              <span className="text-[13px] text-soft">
                 {stat.subtitle}
               </span>
             </div>

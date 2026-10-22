@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, JetBrains_Mono, Inter } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import CookieBanner from "@/components/CookieBanner";
 import {
@@ -10,24 +10,10 @@ import {
   buildProfessionalServiceJsonLd,
 } from "@/lib/seo";
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  display: "swap",
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains",
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  display: "swap",
-});
-
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500"],
   display: "swap",
 });
 
@@ -80,9 +66,9 @@ export default function RootLayout({
   return (
     <html
       lang="es-MX"
-      className={`${fraunces.variable} ${jetbrainsMono.variable} ${inter.variable} scroll-smooth`}
+      className={`${inter.variable} scroll-smooth`}
     >
-      <body className="bg-paper text-ink font-sans antialiased selection:bg-blue selection:text-white">
+      <body className="bg-white text-body font-sans antialiased selection:bg-blue selection:text-white">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

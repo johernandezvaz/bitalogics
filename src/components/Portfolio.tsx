@@ -33,7 +33,7 @@ export default function Portfolio({ featuredOnly = true }: PortfolioProps) {
             <SectionHeading className="font-serif text-[30px] font-medium mt-[10px] text-ink">
               {featuredOnly ? portfolio.title : portfolio.pageTitle}
             </SectionHeading>
-            <p className="text-[14.5px] text-text-soft mt-3 leading-relaxed">
+            <p className="text-[14.5px] text-soft mt-3 leading-relaxed">
               {portfolio.intro}
             </p>
           </div>
@@ -77,7 +77,7 @@ export default function Portfolio({ featuredOnly = true }: PortfolioProps) {
                     />
                   ) : (
                     <div className="w-full h-full bg-paper-warm border-b border-line flex items-center justify-center p-4 text-center">
-                      <span className="font-mono text-[11px] text-text-soft uppercase tracking-wider">
+                      <span className="font-mono text-[11px] text-soft uppercase tracking-wider">
                         {project.title}
                       </span>
                     </div>
@@ -97,7 +97,7 @@ export default function Portfolio({ featuredOnly = true }: PortfolioProps) {
                   <CardHeading className="font-serif text-[16.5px] font-medium mb-[6px] text-ink">
                     {project.title}
                   </CardHeading>
-                  <p className="text-[13.5px] text-text-soft m-0 leading-relaxed">
+                  <p className="text-[13.5px] text-soft m-0 leading-relaxed">
                     {project.description}
                   </p>
                 </div>

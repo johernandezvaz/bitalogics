@@ -1,74 +1,56 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #16283F;
+  --color-white: #FFFFFF;
+  --color-paper: #F4F6F9;
+  --color-paper-warm: #EFF2F6;
   --color-deep: #0E1B2E;
+  --color-frost: rgba(255, 255, 255, 0.8);
+
+  --color-ink: #16283F;
+  --color-body: #3B4A5C;
+  --color-soft: #546273;
+  --color-placeholder: #6B7685;
+  --color-soft-on-dark: #A9B4C4;
+
   --color-blue: #2E86C1;
   --color-blue-dark: #1B5A85;
   --color-gold: #C98A3E;
-  --color-paper: #F4F6F9;
-  --color-paper-warm: #EFF2F6;
+
   --color-line: rgba(22, 40, 63, 0.12);
-  --color-text-soft: rgba(22, 40, 63, 0.62);
+  --color-input-border: #8A94A3;
 
   --font-sans: var(--font-inter), sans-serif;
-  --font-serif: var(--font-fraunces), serif;
-  --font-mono: var(--font-jetbrains), monospace;
 
   --breakpoint-md: 720px;
 }
 
-.eyebrow {
-  font-family: var(--font-jetbrains), monospace;
-  font-size: 12.5px;
-  letter-spacing: 0.06em;
-  color: var(--color-blue-dark);
-  text-transform: uppercase;
+body {
+  font-optical-sizing: auto;
+  font-weight: 400;
+  letter-spacing: normal;
 }
 
-.hero-seam {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 56%;
-  width: 6px;
-  background-color: var(--color-ink);
-  clip-path: polygon(0% 0%, 100% 3%, 60% 9%, 100% 15%, 40% 22%, 100% 30%, 70% 38%,
-      100% 46%, 50% 55%, 100% 63%, 60% 71%, 100% 80%, 45% 88%, 100% 94%,
-      100% 100%, 0% 100%);
-  opacity: 0.9;
-}
-
-/* Scroll reveal physics: fade + translateY(16px -> 0) in 420ms ease-out */
 .reveal-item {
   opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 420ms cubic-bezier(0, 0, 0.2, 1),
-              transform 420ms cubic-bezier(0, 0, 0.2, 1);
-  will-change: opacity, transform;
+  transition: opacity 0.33s cubic-bezier(0.5, 0, 0, 0.75);
 }
 
 .reveal-item.is-visible {
   opacity: 1;
-  transform: translateY(0);
 }
 
-/* Glass reflection accent on project thumbnails */
-.glass-reflection {
-  position: relative;
-}
+@media (prefers-reduced-motion: reduce) {
 
-.glass-reflection::before {
-  content: "";
-  position: absolute;
-  top: -45%;
-  left: -20%;
-  width: 50%;
-  height: 200%;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  transform: rotate(15deg);
-  pointer-events: none;
-  z-index: 10;
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal-item {
+    opacity: 1;
+  }
 }

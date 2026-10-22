@@ -5,7 +5,7 @@ export default function Footer() {
   const { footer } = siteContent;
 
   return (
-    <footer className="border-t border-line py-8 px-8 text-[13px] text-text-soft">
+    <footer className="border-t border-line py-8 px-8 text-[13px] text-soft">
       <div className="max-w-[1080px] mx-auto">
 
         <div className="flex justify-between items-center flex-wrap gap-3 mb-5">
