@@ -51,7 +51,7 @@ export default function Nav({ darkHero = false }: NavProps) {
     <>
       <nav
         aria-label="Principal"
-        className={`sticky top-0 z-30 transition-colors duration-[330ms] ease-site ${scrolled
+        className={`fixed inset-x-0 top-0 z-30 transition-colors duration-[330ms] ease-site ${scrolled
             ? "bg-frost backdrop-blur-[12px]"
             : "bg-transparent backdrop-blur-none"
           }`}

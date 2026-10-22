@@ -6,7 +6,7 @@ export default function Hero() {
   const { hero } = siteContent;
 
   return (
-    <header className="relative min-h-[calc(100svh-72px)] bg-deep flex flex-col overflow-hidden">
+    <header className="relative min-h-[100svh] bg-deep flex flex-col overflow-hidden">
 
       <video
         autoPlay
