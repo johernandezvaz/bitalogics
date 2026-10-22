@@ -143,6 +143,7 @@ export const siteContent = {
       secondaryCta: "",
       surface: "deep" as const,
       projectId: "",
+      coverImage: "/embedded_cover.jpg",
     },
   ],
   howWeWork: {
