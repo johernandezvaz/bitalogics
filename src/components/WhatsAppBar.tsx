@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { siteContent } from "@/lib/content";
 import { whatsappHref } from "@/lib/whatsapp";
 import { useElementVisible, useScrolledPast } from "@/hooks/useIntersection";
 
@@ -73,7 +72,7 @@ export default function WhatsAppBar({ cookieVisible = false }: WhatsAppBarProps)
       </p>
 
       <a
-        href={whatsappHref("Hola, quiero cotizar un proyecto con Bitalogics.")}
+        href={whatsappHref()}
         target="_blank"
         rel="noopener noreferrer"
         style={{

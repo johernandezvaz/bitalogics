@@ -4,10 +4,10 @@ export const SITE_URL = "https://bitalogics.com";
 export const SITE_NAME = "Bitalogics";
 
 export const SITE_TITLE =
-  "Páginas web en Chihuahua, sistemas a la medida e IoT";
+  "Sistemas embebidos y electrónica a la medida en Chihuahua";
 
 export const SITE_DESCRIPTION =
-  "Páginas web en Chihuahua desde $2,500 MXN, tiendas en línea, software a la medida y sistemas embebidos e IoT para negocios del norte de México.";
+  "Laboratorio de soluciones electrónicas a la medida: dispositivos inteligentes, diseño de tarjetas electrónicas y modernización de equipos para empresas del norte de México.";
 
 export const OG_IMAGE = {
   width: 1200,
@@ -70,16 +70,6 @@ export function buildProfessionalServiceJsonLd() {
           description: item.description,
           areaServed: "Chihuahua, México",
         },
-        ...("price" in item && item.price
-          ? {
-            priceSpecification: {
-              "@type": "PriceSpecification",
-              price: item.price,
-              priceCurrency: "MXN",
-              minPrice: item.price,
-            },
-          }
-          : {}),
       })),
     },
   };

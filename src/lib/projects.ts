@@ -1,136 +1,52 @@
-export interface Project {
+export interface LabProject {
   id: string;
   title: string;
+  /** Una línea de valor bajo el título */
+  summary: string;
   description: string;
-  tag: "real" | "concept" | "industrial";
-  destacado: boolean;
-  image?: string;
-  portfolioImage?: string;
-  /** "contain" para logos (no se recortan); por defecto "cover" para capturas */
-  imageFit?: "cover" | "contain";
+  /** Etiquetas técnicas: solo se muestran aquí, nunca en textos de venta (DESIGN.md §6) */
+  tech: string[];
+  tag: "academico" | "propio" | "cliente";
+  /** Ilustración de Andy mientras no haya foto real del sistema */
+  illustration: string;
+  illustrationAlt: string;
+  /** Mensaje de WhatsApp del botón "Quiero algo así" */
+  whatsappMessage: string;
 }
 
-export const projects: Project[] = [
-
+export const labProjects: LabProject[] = [
   {
-    id: "ind-1",
-    title: "Calculadora de perfiles estructurales",
+    id: "silla-mirada-voz",
+    title: "Silla de ruedas controlada por mirada y voz",
+    summary:
+      "Una nueva forma de control para personas que no pueden usar el joystick.",
     description:
-      "Herramienta de escritorio para calcular y seleccionar perfiles metálicos según carga, eliminando las tablas en papel y reduciendo errores de selección.",
-    tag: "industrial",
-    destacado: true,
-    image: "/calculadora_perfiles.jpeg",
+      "Le dimos a una silla de ruedas eléctrica comercial una nueva forma de control. El sistema reconoce comandos de voz y sigue el movimiento de los ojos, todo procesado dentro del dispositivo, sin internet. Para integrarlo, reproducimos la señal del joystick original: la silla funciona sin modificar su electrónica.",
+    tech: [
+      "Raspberry Pi",
+      "Visión por computadora",
+      "Reconocimiento de voz local",
+      "Emulación de joystick",
+    ],
+    tag: "academico",
+    illustration: "/brand/andy-silla.svg",
+    illustrationAlt:
+      "Ilustración: Andy mira una silla de ruedas y le da órdenes con la vista y la voz",
+    whatsappMessage:
+      "Hola, vi la silla de ruedas por mirada y voz y quiero platicar de un proyecto similar.",
   },
   {
-    id: "ind-2",
-    title: "Plataforma web para laboratorio de ensayos",
+    id: "iluminacion-presencia",
+    title: "Iluminación por detección de presencia",
+    summary: "La luz se enciende cuando llegas y se apaga cuando te vas.",
     description:
-      "Sistema para que los clientes del laboratorio soliciten ensayos, revisen resultados y descarguen reportes sin necesidad de llamar o ir en persona.",
-    tag: "industrial",
-    destacado: true,
-    image: "/ASE-CA LAB-02.png",
-    imageFit: "contain",
-  },
-  {
-    id: "ind-3",
-    title: "Sistema de gestión de inventario",
-    description:
-      "Panel web para control de entradas, salidas y existencias en tiempo real. Elimina hojas de cálculo y reduce descuadres de inventario.",
-    tag: "industrial",
-    destacado: true,
-    image: "/sistema_inventario.png",
-  },
-
-  {
-    id: "1",
-    title: "Sapphirus — Tienda de Ropa Americana",
-    description:
-      "Tienda en línea de ropa americana importada, pensada para comprar fácil desde el celular y pagar con toda confianza.",
-    tag: "real",
-    destacado: true,
-    image: "/sapphirus-logo.png",
-    imageFit: "contain",
-  },
-  {
-    id: "kyndred",
-    title: "Kyndred — Plataforma de gestión",
-    description:
-      "Sistema web a la medida para gestión interna de operaciones, con tableros de control, flujos de trabajo y acceso diferenciado por rol.",
-    tag: "real",
-    destacado: true,
-    image: "/kyndred_main.png",
-    portfolioImage: "/kyndred_portfolio.png",
-  },
-  {
-    id: "2",
-    title: "Fajas Colombianas Maydel",
-    description:
-      "Tienda en línea de fajas colombianas, diseñada para que los clientes encuentren lo que buscan y compren sin fricciones desde el celular.",
-    tag: "real",
-    destacado: true,
-    image: "/fajas-maydel-logo.png",
-    imageFit: "contain",
-  },
-  {
-    id: "3",
-    title: "Plataforma para Despacho Contable",
-    description:
-      "Sitio web para un despacho contable, para que sus clientes encuentren su información y se comuniquen con la empresa sin complicaciones.",
-    tag: "real",
-    destacado: false,
-    image: "/Logo-1.png",
-    imageFit: "contain",
-  },
-  {
-    id: "5",
-    title: "Sitio para Agencia de Marketing Digital",
-    description:
-      "Sitio propio de una agencia de desarrollo y marketing digital, enfocado en atraer nuevos clientes a través de buscadores. La base de lo que hoy es Bitalogics.",
-    tag: "real",
-    destacado: true,
-    image:
-      "https://res.cloudinary.com/dizorsslw/image/upload/v1774266308/u6wpk55ptnxrhmsmwlwf.png",
-  },
-
-  // Proyectos de estudio
-  {
-    id: "6",
-    title: "Landing Page para Spa de Belleza",
-    description:
-      "Propuesta de sitio web para un spa, con espacio para reservar citas en línea y un diseño pensado para transmitir confianza.",
-    tag: "concept",
-    destacado: true,
-    image:
-      "https://res.cloudinary.com/dizorsslw/image/upload/v1774265851/vegl8t4ooe3movuxnpmd.png",
-  },
-  {
-    id: "7",
-    title: "Landing Page para Clínica Dental",
-    description:
-      "Propuesta de sitio web para una clínica dental, con catálogo de servicios y formulario de contacto directo.",
-    tag: "concept",
-    destacado: false,
-    image:
-      "https://res.cloudinary.com/dizorsslw/image/upload/v1774265854/qhtupyk4pom4zdrmqws2.png",
-  },
-  {
-    id: "8",
-    title: "Landing Page para Consultorio Dental Infantil",
-    description:
-      "Propuesta de sitio para un consultorio dental pediátrico, con diseño pensado para niños y padres, y contacto directo por WhatsApp.",
-    tag: "concept",
-    destacado: false,
-    image:
-      "https://res.cloudinary.com/dizorsslw/image/upload/v1774265853/u8nfyqhyadnnyx9owzzu.png",
-  },
-  {
-    id: "9",
-    title: "Sitio Portafolio para Psicóloga",
-    description:
-      "Propuesta de sitio para una psicóloga, con blog de artículos y sistema de reserva de citas en línea.",
-    tag: "concept",
-    destacado: false,
-    image:
-      "https://res.cloudinary.com/dizorsslw/image/upload/v1774265853/li3ieh8h5c27aqp4ttkv.png",
+      "Un sistema que detecta a las personas en un espacio y enciende o apaga la iluminación automáticamente. Reduce el consumo de energía sin que nadie tenga que acordarse del apagador.",
+    tech: ["ESP32", "Sensores de presencia", "Automatización"],
+    tag: "academico",
+    illustration: "/brand/andy-presencia.svg",
+    illustrationAlt:
+      "Ilustración: Andy entra a un cuarto, el sensor lo detecta y la lámpara se enciende",
+    whatsappMessage:
+      "Hola, vi la iluminación por detección de presencia y quiero platicar de un proyecto similar.",
   },
 ];

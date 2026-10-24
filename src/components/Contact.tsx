@@ -30,12 +30,11 @@ export default function Contact() {
             aria-hidden="true"
           >
             <Image
-              src="/brand/andy-base.svg"
+              src="/brand/andy-inverso.svg"
               alt=""
               width={64}
               height={80}
-              style={{ width: "auto" }}
-              priority={false}
+              className="h-[80px] w-auto"
             />
           </div>
 

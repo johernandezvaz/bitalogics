@@ -17,7 +17,7 @@ export default function Hero() {
         className="absolute inset-0 w-full h-full object-cover object-center"
         style={{ opacity: 0.55 }}
       >
-        <source src="/bitalogics_hero.mp4" type="video/mp4" />
+        <source src={hero.video} type="video/mp4" />
       </video>
 
       <div
@@ -50,7 +50,7 @@ export default function Hero() {
             <Button href={whatsappHref()} variant="primary" surface="dark">
               {hero.primaryCta}
             </Button>
-            <Button href="/#portafolio" variant="secondary" surface="dark">
+            <Button href={hero.secondaryHref} variant="secondary" surface="dark">
               {hero.secondaryCta}
             </Button>
           </div>

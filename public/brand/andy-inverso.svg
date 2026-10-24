@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="10 14 180 226" width="400" height="502" role="img" aria-label="Andy, mascota de Bitalogics">
+  <title>Andy — versión inversa (fondos deep)</title>
+  <!-- Geometría: trazo S = 8 · cuerpo 120 × 120 (compuerta AND de pie, cúpula r = 60)
+       · patas en 1/4 y 3/4 del ancho, largo 0.3 × cuerpo · nodo con anillo S/2 -->
+  <g stroke="#F4F6F9" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Antena (salida) -->
+    <path d="M100 70 V46" fill="none" stroke-width="8"/>
+    <!-- Patas (entradas) -->
+    <path d="M70 190 V226 M59 226 H81" fill="none" stroke-width="8"/>
+    <path d="M130 190 V226 M119 226 H141" fill="none" stroke-width="8"/>
+    <!-- Cuerpo -->
+    <path d="M40 190 V130 A60 60 0 0 1 160 130 V190 Z" fill="#2E86C1" stroke-width="8"/>
+    <!-- Ojo LED -->
+    <circle cx="100" cy="128" r="24" fill="#C98A3E" stroke-width="8"/>
+    <!-- Sonrisa -->
+    <path d="M89 165 Q100 174 111 165" fill="none" stroke-width="6"/>
+    <!-- Nodo de la antena -->
+    <circle cx="100" cy="37" r="7" fill="#C98A3E" stroke-width="4"/>
+  </g>
+  <!-- Brillo del ojo: siempre arriba a la derecha -->
+  <circle cx="108" cy="120" r="5" fill="#FFFFFF"/>
+</svg>

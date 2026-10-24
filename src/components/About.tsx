@@ -10,38 +10,37 @@ export default function About() {
 
   return (
     <section
-      className="bg-deep text-paper py-[80px] px-8 overflow-hidden"
+      className="bg-deep py-[96px] px-6 md:px-12 lg:px-16"
       id="nosotros"
       ref={ref}
     >
       <div
-        className={`max-w-[1080px] mx-auto reveal-item ${
+        className={`max-w-[1200px] mx-auto reveal-item ${
           isVisible ? "is-visible" : ""
         }`}
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[56px] items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-[48px] md:gap-[64px] items-start">
           <div>
-            <span className="eyebrow block !text-blue">{about.eyebrow}</span>
-            <h2 className="font-serif text-[30px] font-medium mt-[10px] mb-[20px] text-paper">
+            <h2 className="text-[32px] md:text-[40px] leading-[1.2] font-medium text-paper mb-[24px]">
               {about.title}
             </h2>
-            <p className="text-paper/72 text-[15px] max-w-[460px] leading-relaxed">
+            <p className="text-[16px] leading-[1.6] font-normal text-soft-on-dark max-w-[520px] m-0">
               {about.paragraph1}
             </p>
-            <div className="flex gap-[16px] items-center mt-[28px]">
+            <div className="flex gap-[16px] items-center mt-[32px]">
               <FounderPhoto />
               <div>
-                <b className="block font-serif text-[15.5px] font-medium text-paper">
+                <span className="block text-[16px] leading-[1.3] font-medium text-paper">
                   {about.founderName}
-                </b>
-                <span className="text-[13px] text-paper/60">
+                </span>
+                <span className="block text-[14px] leading-[1.5] font-normal text-soft-on-dark">
                   {about.founderTitle}
                 </span>
               </div>
             </div>
           </div>
-          <div>
-            <p className="text-paper/72 text-[15px] max-w-[460px] leading-relaxed">
+          <div className="md:pt-[72px]">
+            <p className="text-[16px] leading-[1.6] font-normal text-soft-on-dark max-w-[520px] m-0">
               {about.paragraph2}
             </p>
           </div>

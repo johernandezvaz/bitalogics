@@ -1,182 +1,134 @@
 export const siteContent = {
   nav: {
     brand: "bitalogics",
-    logoAlt: "Logotipo de Bitalogics, desarrollo de software en Chihuahua",
+    logoAlt: "Logotipo de Bitalogics, laboratorio de sistemas embebidos en Chihuahua",
     links: [
       { label: "Servicios", href: "/#servicios" },
-      { label: "Portafolio", href: "/#portafolio" },
+      { label: "Laboratorio", href: "/#laboratorio" },
       { label: "Nosotros", href: "/#nosotros" },
       { label: "Contacto", href: "/#contacto" },
     ],
-    cta: "Iniciar proyecto",
+    cta: "Cuéntanos tu problema",
     menuOpenLabel: "Abrir menú",
     menuCloseLabel: "Cerrar menú",
   },
   whatsapp: {
     number: "+525648530621",
-    message: "Hola, quiero cotizar un proyecto con Bitalogics.",
+    message: "Hola, tengo un proyecto que me gustaría platicar con Bitalogics.",
   },
   hero: {
-    title: "Tu negocio en línea en 7 días",
+    title: "Laboratorio de soluciones electrónicas a la medida",
     valueLine:
-      "Páginas web en Chihuahua con Google Maps y WhatsApp, listas para recibir clientes.",
-    specs: "7 días · desde $2,500 MXN · sin plantillas",
-    primaryCta: "Cotizar por WhatsApp",
-    secondaryCta: "Ver ejemplos",
-    projectId: "6",
+      "Diseñamos los dispositivos que tu problema necesita: desde la idea hasta un sistema funcionando.",
+    specs: "Electrónica · programación · conexión, pensadas para tu caso",
+    primaryCta: "Cuéntanos tu problema",
+    secondaryCta: "Ver el laboratorio",
+    secondaryHref: "/#laboratorio",
+    video: "/embedded_systems_hero.mp4",
     strip: [
       {
-        label: "Páginas web",
-        description: "Listas en 7 días",
-        href: "/#sitios-web",
+        label: "Dispositivos a la medida",
+        description: "Miden, detectan y controlan",
+        href: "/#servicios",
       },
       {
-        label: "Sistemas a la medida",
-        description: "Citas, inventario, paneles",
-        href: "/#sistemas",
+        label: "Modernización de equipos",
+        description: "Sin reemplazar lo que ya tienes",
+        href: "/#servicios",
       },
       {
-        label: "Sistemas embebidos",
-        description: "Monitoreo y alertas en tu celular",
-        href: "/#iot",
+        label: "Del laboratorio",
+        description: "Proyectos construidos",
+        href: "/#laboratorio",
       },
     ],
   },
   services: {
-    eyebrow: "Servicios",
-    title: "Servicios de páginas web, software e IoT en Chihuahua",
+    title: "Qué hacemos",
+    intro:
+      "Cada proyecto empieza con un problema concreto, no con un catálogo.",
     items: [
       {
         num: "01",
-        title: "Tu negocio en línea en 7 días",
-        price: "2500",
+        title: "Dispositivos inteligentes a la medida",
         description:
-          "Páginas web en Chihuahua para negocios locales, listas en 7 días y desde $2,500 MXN. Se ven bien en celular y te encuentran en Google.",
+          "Equipos que miden, detectan, controlan y se comunican, diseñados alrededor de tu proceso.",
       },
       {
         num: "02",
-        title: "Tienda en línea para negocios",
+        title: "Diseño de tarjetas electrónicas",
         description:
-          "Vende tus productos por internet con catálogo, carrito y pagos, pensada para comprar fácil desde el celular.",
+          "Cuando una solución comercial no basta, diseñamos la tarjeta electrónica exacta para tu aplicación, del esquema al prototipo fabricado.",
       },
       {
         num: "03",
-        title: "Software a la medida",
+        title: "Modernización de equipos existentes",
         description:
-          "Desarrollo de software a la medida en Chihuahua: sistemas de citas, inventario y paneles de control hechos para cómo trabaja tu negocio.",
+          "Le damos nuevas capacidades a máquinas y equipos que ya tienes, sin reemplazarlos: monitoreo, control a distancia y alertas.",
       },
       {
         num: "04",
-        title: "Sistemas embebidos e IoT",
+        title: "Inteligencia en el dispositivo",
         description:
-          "Tarjetas ESP32, sensores y monitoreo remoto para medir, controlar y recibir avisos de tus equipos desde cualquier lugar.",
+          "Reconocimiento de voz, visión por computadora y detección, procesados dentro del propio equipo, sin depender de internet.",
       },
     ],
   },
-  portfolio: {
-    eyebrow: "Portafolio",
-    title: "Software industrial, sitios web y tiendas en línea",
+  lab: {
+    title: "Del laboratorio",
     intro:
-      "Proyectos desarrollados para clientes y exploraciones de diseño del estudio, con etiqueta honesta en cada caso.",
-    viewAllCta: "Ver todos los proyectos",
-    backToHomeCta: "← Volver al inicio",
-    pageTitle: "Portafolio: software industrial, páginas web y tiendas en línea",
-    pageSubtitle:
-      "Explora nuestro trabajo de cliente y las exploraciones de diseño que hemos desarrollado como estudio.",
+      "Proyectos que diseñamos y construimos, de la idea al dispositivo funcionando.",
+    cta: "Quiero algo así",
+    techLabel: "Tecnología",
     tags: {
-      real: "Proyecto de cliente",
-      concept: "Proyecto de estudio",
-      industrial: "Software industrial",
+      academico: "Proyecto académico",
+      propio: "Proyecto propio",
+      cliente: "Proyecto de cliente",
     },
+    pageTitle: "Laboratorio: proyectos de sistemas embebidos",
+    pageDescription:
+      "Dispositivos y sistemas electrónicos diseñados y construidos por Bitalogics, con etiqueta honesta en cada proyecto.",
+    backToHomeCta: "← Volver al inicio",
   },
   about: {
-    eyebrow: "Nosotros",
-    title: "Tecnología con un enfoque humano",
+    title: "Ingeniería con un enfoque humano",
     paragraph1:
-      "En Bitalogics creemos que cada negocio trabaja de forma diferente, por eso no hacemos soluciones genéricas. Nos tomamos el tiempo de entender cómo funciona cada proyecto para desarrollar software que realmente resuelva problemas y facilite el trabajo del día a día.",
+      "En Bitalogics diseñamos sistemas electrónicos a la medida. Cada problema es distinto, así que no partimos de un catálogo: entendemos cómo funciona tu proceso y construimos el dispositivo que lo resuelve.",
     paragraph2:
-      "Hemos trabajado en proyectos de distintos tamaños, desde páginas web y tiendas en línea hasta sistemas internos para empresas con procesos más complejos. Sin importar el alcance, nuestro objetivo siempre es el mismo: crear herramientas confiables, fáciles de usar y que aporten valor desde el primer día.",
+      "Venimos del mundo de la automatización industrial: integramos sistemas con equipos de manufactura y hemos participado en la puesta en marcha de plantas en México y Europa. Esa experiencia nos enseñó a construir equipos confiables, que funcionan en condiciones reales desde el primer día.",
     founderName: "José Hernández",
     founderTitle: "Fundador · Ingeniero en Sistemas Computacionales",
   },
-  serviceSections: [
-    {
-      id: "sitios-web",
-      title: "Tu negocio en línea en 7 días",
-      valueLine:
-        "Sitio web con Google Maps y botón de WhatsApp, listo para recibir clientes.",
-      specs: "7 días · desde $2,500 MXN · sin plantillas",
-      primaryCta: "Cotizar por WhatsApp",
-      secondaryCta: "Ver ejemplos",
-      surface: "white" as const,
-      projectId: "1",
-    },
-    {
-      id: "tiendas",
-      title: "Tienda en línea para negocios",
-      valueLine:
-        "Vende tus productos por internet con catálogo, carrito y pagos en línea.",
-      specs: "Catálogo · carrito · pagos · optimizada para celular",
-      primaryCta: "Cotizar por WhatsApp",
-      secondaryCta: "Ver ejemplo",
-      surface: "paper" as const,
-      projectId: "2",
-    },
-    {
-      id: "sistemas",
-      title: "Software a la medida",
-      valueLine:
-        "Sistemas de citas, inventario y paneles hechos para cómo trabaja tu negocio.",
-      specs: "Citas · inventario · paneles · acceso por rol",
-      primaryCta: "Platicar sobre tu proyecto",
-      secondaryCta: "",
-      surface: "white" as const,
-      projectId: "kyndred",
-    },
-    {
-      id: "iot",
-      title: "Sistemas embebidos",
-      valueLine:
-        "Monitoreo remoto y automatización para que tus equipos te avisen antes de que algo falle.",
-      specs: "Alertas · monitoreo remoto · automatización · control en tu celular",
-      primaryCta: "Cotizar sistema",
-      secondaryCta: "",
-      surface: "deep" as const,
-      projectId: "",
-      coverImage: "/embedded_cover.jpg",
-    },
-  ],
   howWeWork: {
     title: "Cómo trabajamos",
     steps: [
       {
         num: "01",
-        title: "Diagnóstico",
-        description: "Entendemos cómo funciona tu negocio antes de escribir una sola línea de código.",
+        title: "Entendemos el problema",
+        description: "Antes de hablar de componentes, entendemos qué necesitas resolver.",
       },
       {
         num: "02",
-        title: "Propuesta",
-        description: "Presentamos alcance, tiempo de entrega y precio por escrito, sin sorpresas.",
+        title: "Diseñamos la solución",
+        description: "Elegimos la tecnología adecuada, ni más ni menos.",
       },
       {
         num: "03",
-        title: "Desarrollo",
-        description: "Iteramos contigo en ciclos cortos para que el resultado sea exactamente lo que necesitas.",
+        title: "Construimos el prototipo",
+        description: "Lo probamos en condiciones reales, no solo en la mesa de trabajo.",
       },
       {
         num: "04",
-        title: "Entrega",
-        description: "Capacitamos a tu equipo, entregamos el código fuente y dejamos todo funcionando.",
+        title: "Lo dejamos funcionando",
+        description: "Instalación, ajustes y acompañamiento después de la entrega.",
       },
     ],
   },
   contact: {
-    eyebrow: "Contacto",
-    title: "¿Tienes un proyecto en mente? Hablemos.",
-    body: "Cuéntanos qué necesitas y te respondemos en menos de 24 horas.",
-    cta: "Escríbenos",
-    whatsappCta: "Cotizar por WhatsApp",
+    title: "¿Tienes un problema que ninguna solución comercial resuelve?",
+    body: "Ahí es donde empezamos. Cuéntanos qué necesitas y te respondemos en menos de 24 horas.",
+    cta: "Enviar un mensaje",
+    whatsappCta: "Escríbenos por WhatsApp",
     email: "mailto:hola@bitalogics.com",
   },
   footer: {
