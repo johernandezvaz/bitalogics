@@ -78,13 +78,7 @@ export const siteContent = {
     title: "Del laboratorio",
     intro:
       "Proyectos que diseñamos y construimos, de la idea al dispositivo funcionando.",
-    cta: "Quiero algo así",
     techLabel: "Tecnología",
-    tags: {
-      academico: "Proyecto académico",
-      propio: "Proyecto propio",
-      cliente: "Proyecto de cliente",
-    },
     pageTitle: "Laboratorio: proyectos de sistemas embebidos",
     pageDescription:
       "Dispositivos y sistemas electrónicos diseñados y construidos por Bitalogics, con etiqueta honesta en cada proyecto.",

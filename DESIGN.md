@@ -209,7 +209,7 @@ Es el equivalente a la barra "Ask a Question" de Tesla y el único elemento fijo
 
 ## 6. Imagen de producto
 
-La imagen es el diseño. Si una sección no tiene una imagen real del producto, se simplifica a texto; **no se rellena**. La única excepción son los proyectos del laboratorio, que se ilustran con una escena de Andy (§5) y llevan la etiqueta de tipo debajo; la ilustración se sustituye por la foto real en cuanto exista.
+La imagen es el diseño. Si una sección no tiene una imagen real del producto, se simplifica a texto; **no se rellena**. La única excepción son los proyectos del laboratorio, que se ilustran con una escena de Andy (§5); la ilustración se sustituye por la foto real en cuanto exista.
 
 **Sí**
 - **Capturas reales** de sitios entregados, dentro de marcos planos de celular o navegador (contorno `ink` de 2 px, sin sombra ni reflejo), centradas sobre `paper-warm`.
@@ -248,8 +248,6 @@ Cada sección principal sigue el ritmo de Tesla: **nombre → línea de valor �
 │                cuando te vas.                │
 │  ESP32 · Sensores de presencia · Automatiz.  │  ← 16/500 ink
 │                                              │
-│              [ Quiero algo así ]             │  ← primario
-│                                              │
 │            ┌────────────────────┐            │
 │            │  escena de Andy o  │            │  ← imagen del producto
 │            │  foto del sistema  │            │
@@ -264,7 +262,7 @@ Cada sección principal sigue el ritmo de Tesla: **nombre → línea de valor �
 Una pantalla por idea, en este orden:
 1. **Hero** sobre `deep`: *Laboratorio de soluciones electrónicas a la medida*, con video de ambiente oscuro detrás (`embedded_systems_hero.mp4`) y la tira de tres accesos. Sin Andy.
 2. **Qué hacemos:** cuatro servicios en grid de dos columnas, solo texto (número 14/500 `soft`, título 18/500, descripción en `body`).
-3. **Del laboratorio:** cada proyecto en su propia pantalla, alternando `paper` y `white`. Patrón: título → línea de valor → descripción → línea de tecnología → botón "Quiero algo así" → escena de Andy con la etiqueta de tipo debajo ("Proyecto académico", "Proyecto propio" o "Proyecto de cliente").
+3. **Del laboratorio:** cada proyecto en su propia pantalla, alternando `paper` y `white`. Patrón: título → línea de valor → descripción → línea de tecnología → escena de Andy. **Sin botón y sin etiqueta de tipo:** son muestras de lo que hemos construido, no productos en venta, porque todo se diseña a la medida. La invitación a platicar vive en la barra de WhatsApp y en Contacto.
 4. **Cómo trabajamos:** cuatro pasos en una fila, solo texto.
 5. **Nosotros**, sobre `deep`.
 6. **Contacto:** Andy inverso y dos botones.
@@ -371,7 +369,7 @@ El espacio en blanco es la señal de calidad. Que se vea **un solo mensaje a la 
 - Marca: `blue` `#2E86C1` (Andy e íconos grandes) · `gold` (nodo y LED)
 
 ### Ejemplos de instrucciones
-- "Crea la pantalla de un proyecto del laboratorio sobre `paper`, altura mínima de pantalla completa. Título en Inter 40/500 `ink`, línea de valor en 20/400 `body`, descripción en 16/400 `body`, tecnología 'ESP32 · Sensores de presencia · Automatización' en 16/500 `ink` y un botón primario `blue.dark` 'Quiero algo así'. A la derecha (columnas 5/7 en escritorio), la escena de Andy sobre `paper-warm` con radio de 12 px y la etiqueta 'Proyecto académico' debajo en 14/400 `soft`. Sin sombras."
+- "Crea la pantalla de un proyecto del laboratorio sobre `paper`, altura mínima de pantalla completa. Título en Inter 40/500 `ink`, línea de valor en 20/400 `body`, descripción en 16/400 `body`, tecnología 'ESP32 · Sensores de presencia · Automatización' en 16/500 `ink`. A la derecha (columnas 5/7 en escritorio), la escena de Andy sobre `paper-warm` con radio de 12 px. Sin botón ni etiqueta de tipo. Sin sombras."
 - "Crea la sección de sistemas embebidos sobre `deep`: título en `paper` 40/500, línea en `soft-on-dark`, botón primario `gold` con texto `deep` y la foto del sistema instalado sobre fondo `deep` liso, sin bordes. No menciones plataformas ni componentes."
 - "Crea el bloque de proyectos destacados: los dos sistemas de software industrial, cada uno a ancho completo con captura 16:9 y radio de 12 px, nombre en 18/500 `ink`, una línea en `body` sobre el problema que resuelve y la etiqueta 'Software industrial' en 14/400 `soft`."
 - "Crea el grid de proyectos: dos columnas en escritorio y una en móvil, separación de 24 px. Cada tarjeta lleva la captura 3:2 con radio de 12 px, debajo el nombre en 18/500 `ink`, una línea en `body` y la etiqueta 'Proyecto de cliente' en 14/400 `soft`. Sin bordes ni sombras."

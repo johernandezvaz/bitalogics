@@ -6,12 +6,9 @@ export interface LabProject {
   description: string;
   /** Etiquetas técnicas: solo se muestran aquí, nunca en textos de venta (DESIGN.md §6) */
   tech: string[];
-  tag: "academico" | "propio" | "cliente";
   /** Ilustración de Andy mientras no haya foto real del sistema */
   illustration: string;
   illustrationAlt: string;
-  /** Mensaje de WhatsApp del botón "Quiero algo así" */
-  whatsappMessage: string;
 }
 
 export const labProjects: LabProject[] = [
@@ -28,12 +25,9 @@ export const labProjects: LabProject[] = [
       "Reconocimiento de voz local",
       "Emulación de joystick",
     ],
-    tag: "academico",
     illustration: "/brand/andy-silla.svg",
     illustrationAlt:
       "Ilustración: Andy mira una silla de ruedas y le da órdenes con la vista y la voz",
-    whatsappMessage:
-      "Hola, vi la silla de ruedas por mirada y voz y quiero platicar de un proyecto similar.",
   },
   {
     id: "iluminacion-presencia",
@@ -42,11 +36,8 @@ export const labProjects: LabProject[] = [
     description:
       "Un sistema que detecta a las personas en un espacio y enciende o apaga la iluminación automáticamente. Reduce el consumo de energía sin que nadie tenga que acordarse del apagador.",
     tech: ["ESP32", "Sensores de presencia", "Automatización"],
-    tag: "academico",
     illustration: "/brand/andy-presencia.svg",
     illustrationAlt:
       "Ilustración: Andy entra a un cuarto, el sensor lo detecta y la lámpara se enciende",
-    whatsappMessage:
-      "Hola, vi la iluminación por detección de presencia y quiero platicar de un proyecto similar.",
   },
 ];

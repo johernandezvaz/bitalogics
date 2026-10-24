@@ -1,10 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import Button from "@/components/Button";
 import { labProjects, type LabProject } from "@/lib/projects";
 import { siteContent } from "@/lib/content";
-import { whatsappHref } from "@/lib/whatsapp";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 type Surface = "paper" | "white";
@@ -100,11 +98,6 @@ function LabProjectScreen({ project, surface, headingLevel: Heading, header }: L
               <span className="sr-only">{lab.techLabel}: </span>
               {project.tech.join(" · ")}
             </p>
-            <div className="mt-8 flex flex-col md:flex-row gap-4 md:justify-center lg:justify-start">
-              <Button href={whatsappHref(project.whatsappMessage)} variant="primary" surface="light">
-                {lab.cta}
-              </Button>
-            </div>
           </div>
 
           <figure className="mt-12 lg:mt-0 lg:col-span-7 m-0">
@@ -120,9 +113,6 @@ function LabProjectScreen({ project, surface, headingLevel: Heading, header }: L
                 />
               </div>
             </div>
-            <figcaption className="mt-4 text-[14px] leading-[1.5] font-normal text-soft text-center lg:text-left">
-              {lab.tags[project.tag]}
-            </figcaption>
           </figure>
         </div>
       </div>
