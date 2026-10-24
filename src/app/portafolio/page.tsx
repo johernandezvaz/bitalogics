@@ -1,36 +1,36 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Nav from "@/components/Nav";
-import Portfolio from "@/components/Portfolio";
+import Lab from "@/components/Lab";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import Link from "next/link";
 import { siteContent } from "@/lib/content";
 
+const { lab } = siteContent;
+
 export const metadata: Metadata = {
-  title: "Portafolio: software industrial, páginas web y tiendas en línea",
-  description:
-    "Software industrial, sitios web y tiendas en línea desarrollados por Bitalogics en Chihuahua, con etiqueta honesta en cada proyecto.",
+  title: lab.pageTitle,
+  description: lab.pageDescription,
   alternates: { canonical: "/portafolio" },
 };
 
 export default function PortafolioPage() {
-  const { portfolio } = siteContent;
-
   return (
     <div className="flex flex-col">
       <Nav />
-      <main className="flex-1">
-        {/* Enlace de regreso */}
-        <div className="pt-8 px-6 md:px-12 lg:px-16 max-w-[1200px] mx-auto">
-          <Link
-            href="/"
-            className="text-[14px] font-normal text-soft hover:text-ink transition-colors duration-[330ms] underline underline-offset-4"
-          >
-            {portfolio.backToHomeCta}
-          </Link>
+      <main className="flex-1 pt-[72px]">
+        <div className="bg-paper pt-8 px-6 md:px-12 lg:px-16">
+          <div className="max-w-[1200px] mx-auto">
+            <Link
+              href="/"
+              className="text-[14px] font-normal text-soft hover:text-ink transition-colors duration-[330ms] underline underline-offset-4"
+            >
+              {lab.backToHomeCta}
+            </Link>
+          </div>
         </div>
 
-        <Portfolio featuredOnly={false} />
+        <Lab asPage />
         <Contact />
       </main>
       <Footer />

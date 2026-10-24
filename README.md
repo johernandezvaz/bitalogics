@@ -1,6 +1,6 @@
 # Bitalogics
 
-Sitio web corporativo de **Bitalogics**, un estudio de desarrollo de software con sede en Chihuahua, México. El sitio sirve como carta de presentación del estudio: comunica propuesta de valor, muestra el portafolio de proyectos y permite a los visitantes iniciar contacto directamente desde la página.
+Sitio web de **Bitalogics**, laboratorio de soluciones electrónicas a la medida (sistemas embebidos) con sede en Chihuahua, México. El sitio sirve como carta de presentación del estudio: comunica propuesta de valor, muestra el portafolio de proyectos y permite a los visitantes iniciar contacto directamente desde la página.
 
 ---
 

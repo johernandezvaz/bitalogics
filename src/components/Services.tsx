@@ -11,37 +11,35 @@ export default function Services() {
     <section
       id="servicios"
       ref={ref}
-      className="bg-paper-warm py-[80px] px-8 overflow-hidden"
+      className="bg-white py-[96px] px-6 md:px-12 lg:px-16"
     >
-      <div className="max-w-[1080px] mx-auto">
+      <div className="max-w-[1200px] mx-auto">
         <div
-          className={`mb-[44px] max-w-[560px] reveal-item ${
+          className={`max-w-[720px] mx-auto text-center mb-[64px] reveal-item ${
             isVisible ? "is-visible" : ""
           }`}
         >
-          <span className="eyebrow block">{services.eyebrow}</span>
-          <h2 className="font-serif text-[30px] font-medium mt-[10px] text-ink">
+          <h2 className="text-[32px] md:text-[40px] leading-[1.2] font-medium text-ink">
             {services.title}
           </h2>
+          <p className="mt-4 text-[18px] md:text-[20px] leading-[1.4] font-normal text-body">
+            {services.intro}
+          </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-line border border-line">
-          {services.items.map((service, index) => (
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-[64px] gap-y-[48px] max-w-[960px] mx-auto">
+          {services.items.map((service) => (
             <div
               key={service.num}
-              className={`bg-paper-warm p-8 transition-all duration-200 hover:-translate-y-1 hover:border-blue hover:shadow-[0_8px_24px_rgba(22,40,63,0.08)] reveal-item ${
-                isVisible ? "is-visible" : ""
-              }`}
-              style={{
-                transitionDelay: isVisible ? `${index * 80}ms` : "0ms",
-              }}
+              className={`reveal-item ${isVisible ? "is-visible" : ""}`}
             >
-              <span className="font-mono text-[12px] text-gold block">
+              <span className="block text-[14px] font-medium leading-[1.2] text-soft mb-[12px]">
                 {service.num}
               </span>
-              <h3 className="font-serif text-[19px] font-medium my-[12px] text-ink">
+              <h3 className="text-[18px] leading-[1.3] font-medium text-ink mb-[8px]">
                 {service.title}
               </h3>
-              <p className="text-[14.5px] text-soft m-0 leading-relaxed">
+              <p className="text-[16px] leading-[1.6] font-normal text-body m-0">
                 {service.description}
               </p>
             </div>

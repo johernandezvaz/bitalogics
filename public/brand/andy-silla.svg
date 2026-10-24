@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400" role="img" aria-label="Andy mira una silla de ruedas y le da órdenes con la vista y la voz">
+  <title>Andy — silla de ruedas por mirada y voz</title>
+  <!-- Andy: misma geometría que andy-base.svg, desplazado (dx 40, dy 112) -->
+
+  <!-- Piso -->
+  <path d="M40 340 H560" fill="none" stroke="#16283F" stroke-opacity="0.12" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Mirada: línea punteada del ojo a la silla -->
+  <path d="M172 238 L330 214" fill="none" stroke="#2E86C1" stroke-width="4" stroke-linecap="round" stroke-dasharray="0.1 14"/>
+
+  <!-- Voz: ondas junto a la antena -->
+  <g fill="none" stroke="#2E86C1" stroke-width="4" stroke-linecap="round">
+    <path d="M160 136 A18 18 0 0 1 160 162"/>
+    <path d="M172 126 A32 32 0 0 1 172 172"/>
+  </g>
+
+  <!-- Silla de ruedas -->
+  <g fill="none" stroke="#16283F" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M330 120 H352 V214 H458" stroke-width="8"/>
+    <path d="M362 178 H440" stroke-width="6"/>
+    <path d="M458 214 L466 296 L478 320" stroke-width="6"/>
+    <path d="M466 292 H494" stroke-width="6"/>
+    <circle cx="380" cy="274" r="62" stroke-width="8"/>
+    <circle cx="478" cy="324" r="14" stroke-width="6"/>
+  </g>
+  <circle cx="380" cy="274" r="8" fill="#16283F"/>
+
+  <!-- Dirección de avance -->
+  <g fill="none" stroke="#2E86C1" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M512 250 H556"/>
+    <path d="M542 236 L556 250 L542 264"/>
+  </g>
+
+  <!-- Andy -->
+  <g transform="translate(40 112)">
+    <g stroke="#16283F" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M100 70 V46" fill="none" stroke-width="8"/>
+      <path d="M70 190 V226 M59 226 H81" fill="none" stroke-width="8"/>
+      <path d="M130 190 V226 M119 226 H141" fill="none" stroke-width="8"/>
+      <path d="M40 190 V130 A60 60 0 0 1 160 130 V190 Z" fill="#2E86C1" stroke-width="8"/>
+      <!-- Ojo LED mirando hacia la silla -->
+      <circle cx="108" cy="126" r="24" fill="#C98A3E" stroke-width="8"/>
+      <path d="M89 165 Q100 174 111 165" fill="none" stroke-width="6"/>
+      <circle cx="100" cy="37" r="7" fill="#C98A3E" stroke-width="4"/>
+    </g>
+    <circle cx="116" cy="118" r="5" fill="#FFFFFF"/>
+  </g>
+</svg>

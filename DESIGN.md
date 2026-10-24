@@ -9,14 +9,13 @@ Este documento es la referencia para cualquier persona o agente que diseñe o pr
 
 ## 1. Tema visual y atmósfera
 
-Bitalogics es una sala de exhibición digital. Cada pantalla muestra **un producto** —una oferta, un sitio que entregamos, un dispositivo que construimos— y la interfaz pone solo la estructura mínima para entenderlo y actuar.
+Bitalogics es un **laboratorio de soluciones electrónicas a la medida**, y el sitio es su sala de exhibición. Cada pantalla muestra **una idea** —un servicio o un dispositivo que construimos— y la interfaz pone solo la estructura mínima para entenderlo y actuar.
 
 En Tesla, el producto es un coche y la fotografía carga toda la emoción. En Bitalogics, el producto es **lo que el cliente recibe**:
 
-- **Sitios y sistemas entregados**, mostrados como capturas reales dentro de marcos de celular o navegador.
 - **Sistemas embebidos**, mostrados como el sistema terminado y funcionando (el equipo instalado, su carcasa y la alerta que llega al celular), nunca como la tarjeta electrónica sola.
-- **Software industrial**, mostrado con capturas reales de las pantallas de operación. Es el trabajo de mayor peso y abre el portafolio.
-- **Ofertas empaquetadas** (por ejemplo, *Tu negocio en línea en 7 días*), presentadas como un modelo: nombre, una línea de valor, especificaciones y dos botones.
+- **Proyectos del laboratorio** sin fotos reales, ilustrados con una escena de Andy que explica qué hace el sistema (ver §5 y §6).
+- **Servicios**, presentados por lo que resuelven, no por los componentes que usan.
 
 No hay bordes decorativos, degradados, patrones, texturas ni sombras. El azul marino, el azul y el dorado de la marca se usan con la misma disciplina con la que Tesla usa su único azul: **cada color tiene un trabajo y no hace otro**.
 
@@ -96,7 +95,7 @@ No hay degradados en ninguna parte. La profundidad viene de la imagen de product
 |---|---|---|---|---|
 | Título de producto (hero) | 40 px (32 px en móvil) | 500 | 1.2 | Máximo absoluto del sitio. `ink`, o `paper` sobre `deep` |
 | Línea de valor | 20 px (18 px en móvil) | 400 | 1.4 | Una sola línea bajo el título, en `body` |
-| Línea de especificaciones | 16 px | 500 | 1.4 | Ej.: *7 días · desde $2,500 · botón de WhatsApp*, separados por `·` |
+| Línea de especificaciones | 16 px | 500 | 1.4 | Ej.: *ESP32 · Sensores de presencia · Automatización*, separados por `·` |
 | Nombre en tarjeta | 18 px | 500 | 1.3 | Proyectos y servicios en grids |
 | Cuerpo | 16 px | 400 | 1.6 | Párrafos. **16 px mínimo**, porque nuestro lector usa celular |
 | Navegación | 14 px | 500 | 1.2 | Etiquetas del menú |
@@ -198,8 +197,10 @@ Es el equivalente a la barra "Ask a Question" de Tesla y el único elemento fijo
 - Archivo fuente: `public/brand/andy-base.svg`.
 - **Construcción:** el símbolo de compuerta AND de pie (rectángulo con cúpula y cuerpo tan ancho como alto), dos terminales como patas, antena de salida con nodo dorado, un ojo LED dorado con brillo arriba a la derecha y una sonrisa pequeña. No tiene brazos.
 - **Andy no es el producto.** Tesla no pone mascotas en el hero, y nosotros tampoco. Andy acompaña; no protagoniza.
-- **Dónde sí aparece:** la barra de WhatsApp, la sección de contacto, la página 404, estados vacíos, confirmaciones de formulario ("¡Recibido!") y redes sociales.
-- **Dónde no:** el hero, las tarjetas de producto ni como fondo o patrón.
+- **Dónde sí aparece:** la barra de WhatsApp, la sección de contacto, la página 404, estados vacíos, confirmaciones de formulario ("¡Recibido!"), redes sociales y **las ilustraciones de los proyectos del laboratorio** mientras no haya fotos reales del sistema.
+- **Dónde no:** el hero, las tarjetas de servicio ni como fondo o patrón.
+- **Escenas del laboratorio:** archivos `public/brand/andy-*.svg` (hoy `andy-silla.svg` y `andy-presencia.svg`). Andy conserva su geometría exacta de `andy-base.svg` (solo se desplaza); el entorno se dibuja con el mismo trazo `ink` de puntas redondas, sin relleno salvo `blue` en objetos del producto, `white` en piezas pequeñas y `gold` solo para la luz encendida o el nodo que se activa. Las señales (mirada, voz, detección) son trazos `blue` punteados. Fondo transparente, sobre `paper-warm`, con relación 3:2.
+- **Sobre `deep`** se usa `public/brand/andy-inverso.svg` (trazo `paper`), nunca la versión base, cuyo contorno `ink` desaparece en el fondo oscuro.
 - **Una aparición por pantalla** como máximo.
 - **Expresiones:** se comunican solo con el ojo, la antena y la inclinación del cuerpo. El nodo encendido (con rayitos dorados) significa "idea" o "resuelto". Nunca se le agregan brazos, ropa ni objetos.
 - **Tamaño mínimo:** 32 px de alto. Por debajo, las patas desaparecen; en ese caso se usa el logo "b".
@@ -208,7 +209,7 @@ Es el equivalente a la barra "Ask a Question" de Tesla y el único elemento fijo
 
 ## 6. Imagen de producto
 
-La imagen es el diseño. Si una sección no tiene una imagen real del producto, se simplifica a texto; **no se rellena**.
+La imagen es el diseño. Si una sección no tiene una imagen real del producto, se simplifica a texto; **no se rellena**. La única excepción son los proyectos del laboratorio, que se ilustran con una escena de Andy (§5); la ilustración se sustituye por la foto real en cuanto exista.
 
 **Sí**
 - **Capturas reales** de sitios entregados, dentro de marcos planos de celular o navegador (contorno `ink` de 2 px, sin sombra ni reflejo), centradas sobre `paper-warm`.
@@ -228,6 +229,7 @@ La imagen es el diseño. Si una sección no tiene una imagen real del producto, 
 ### Cómo se habla de embebidos
 Vendemos **sistemas y resultados**, no tarjetas.
 - **No** se nombran plataformas ni componentes en textos de venta (ESP32, STM32, Raspberry Pi, Arduino, sensores por modelo). Al cliente le importa qué resuelve, no con qué está hecho.
+- **Excepción, proyectos del laboratorio:** la tecnología va en la línea de especificaciones del proyecto (16/500 `ink`, separada por `·`), nunca en el título ni en la descripción. Así el texto lo entiende cualquiera y quien sabe de técnica ve el detalle.
 - **Sí** se nombra el sistema por lo que hace ("Monitor de temperatura con alertas") y el resultado en términos del negocio ("te avisa en WhatsApp antes de que se eche a perder la mercancía").
 - La plataforma se elige por proyecto y solo se menciona en la propuesta técnica, si el cliente la pide.
 
@@ -241,16 +243,14 @@ Cada sección principal sigue el ritmo de Tesla: **nombre → línea de valor �
 ```
 ┌──────────────────────────────────────────────┐
 │                                              │
-│          Tu negocio en línea en 7 días       │  ← 40/500 ink
-│   Sitio, Google Maps y WhatsApp, listo para  │  ← 20/400 body
-│              recibir clientes.               │
-│     7 días · desde $2,500 · sin plantillas   │  ← 16/500 ink
-│                                              │
-│   [ Cotizar por WhatsApp ]  [ Ver ejemplos ] │  ← primario + secundario
+│    Iluminación por detección de presencia    │  ← 40/500 ink
+│  La luz se enciende cuando llegas y se apaga │  ← 20/400 body
+│                cuando te vas.                │
+│  ESP32 · Sensores de presencia · Automatiz.  │  ← 16/500 ink
 │                                              │
 │            ┌────────────────────┐            │
-│            │  captura en marco  │            │  ← imagen del producto
-│            │    de celular      │            │
+│            │  escena de Andy o  │            │  ← imagen del producto
+│            │  foto del sistema  │            │
 │            └────────────────────┘            │
 └──────────────────────────────────────────────┘
 ```
@@ -260,13 +260,14 @@ Cada sección principal sigue el ritmo de Tesla: **nombre → línea de valor �
 
 ### Secuencia de la página de inicio
 Una pantalla por idea, en este orden:
-1. **Oferta principal**, la más fácil de comprar (hoy: *Tu negocio en línea en 7 días*).
-2. **Tiendas en línea**, con una captura real de un proyecto de cliente.
-3. **Sistemas a la medida** (citas, inventario, paneles).
-4. **Sistemas embebidos**, en sección `deep`: sistemas sencillos listos para instalar, presentados por lo que resuelven (ver "Cómo se habla de embebidos"). Mientras no haya instalaciones con clientes, se presentan con honestidad como "prototipos" o "proyectos propios".
-5. **Trabajo real:** abre con los **dos sistemas de software industrial como proyectos destacados**, cada uno a ancho completo (captura 16:9, nombre, una línea sobre el problema que resuelve y etiqueta "Software industrial"). Después, el grid con el resto de proyectos (2 columnas en escritorio, 1 en móvil).
-6. **Cómo trabajamos:** cuatro pasos en una fila, solo texto (número 14/500 `soft`, título 18/500, una línea en `body`).
-7. **Contacto:** formulario corto y Andy.
+1. **Hero** sobre `deep`: *Laboratorio de soluciones electrónicas a la medida*, con video de ambiente oscuro detrás (`embedded_systems_hero.mp4`) y la tira de tres accesos. Sin Andy.
+2. **Qué hacemos:** cuatro servicios en grid de dos columnas, solo texto (número 14/500 `soft`, título 18/500, descripción en `body`).
+3. **Del laboratorio:** cada proyecto en su propia pantalla, alternando `paper` y `white`. Patrón: título → línea de valor → descripción → línea de tecnología → escena de Andy. **Sin botón y sin etiqueta de tipo:** son muestras de lo que hemos construido, no productos en venta, porque todo se diseña a la medida. La invitación a platicar vive en la barra de WhatsApp y en Contacto.
+4. **Cómo trabajamos:** cuatro pasos en una fila, solo texto.
+5. **Nosotros**, sobre `deep`.
+6. **Contacto:** Andy inverso y dos botones.
+
+`/portafolio` muestra el mismo laboratorio con el título como `h1`.
 
 Los textos viven en `src/lib/content.ts` y los proyectos en `src/lib/projects.ts`. No se escriben textos directamente en los componentes.
 
@@ -368,7 +369,7 @@ El espacio en blanco es la señal de calidad. Que se vea **un solo mensaje a la 
 - Marca: `blue` `#2E86C1` (Andy e íconos grandes) · `gold` (nodo y LED)
 
 ### Ejemplos de instrucciones
-- "Crea la sección de oferta principal: altura mínima de pantalla completa sobre `white`, centrada. Título 'Tu negocio en línea en 7 días' en Inter 40/500 `ink`, línea de valor en 20/400 `body` y especificaciones '7 días · desde $2,500 · botón de WhatsApp' en 16/500 `ink`. Abajo, un botón primario `blue.dark` 'Cotizar por WhatsApp' (48 px de alto, radio 4 px) y un secundario `paper` 'Ver ejemplos'. Debajo, una captura real en marco plano de celular sobre `paper-warm` con radio de 12 px. Sin sombras."
+- "Crea la pantalla de un proyecto del laboratorio sobre `paper`, altura mínima de pantalla completa. Título en Inter 40/500 `ink`, línea de valor en 20/400 `body`, descripción en 16/400 `body`, tecnología 'ESP32 · Sensores de presencia · Automatización' en 16/500 `ink`. A la derecha (columnas 5/7 en escritorio), la escena de Andy sobre `paper-warm` con radio de 12 px. Sin botón ni etiqueta de tipo. Sin sombras."
 - "Crea la sección de sistemas embebidos sobre `deep`: título en `paper` 40/500, línea en `soft-on-dark`, botón primario `gold` con texto `deep` y la foto del sistema instalado sobre fondo `deep` liso, sin bordes. No menciones plataformas ni componentes."
 - "Crea el bloque de proyectos destacados: los dos sistemas de software industrial, cada uno a ancho completo con captura 16:9 y radio de 12 px, nombre en 18/500 `ink`, una línea en `body` sobre el problema que resuelve y la etiqueta 'Software industrial' en 14/400 `soft`."
 - "Crea el grid de proyectos: dos columnas en escritorio y una en móvil, separación de 24 px. Cada tarjeta lleva la captura 3:2 con radio de 12 px, debajo el nombre en 18/500 `ink`, una línea en `body` y la etiqueta 'Proyecto de cliente' en 14/400 `soft`. Sin bordes ni sombras."
